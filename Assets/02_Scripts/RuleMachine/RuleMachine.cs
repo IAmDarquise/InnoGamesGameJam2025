@@ -9,8 +9,10 @@ public class RuleMachine : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyUp(KeyCode.K))
+
+        if(Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("K pressed");
             SpinTheMachine();
         }
     }
