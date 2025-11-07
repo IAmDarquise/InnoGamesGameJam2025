@@ -26,7 +26,7 @@ public class BaseEnemy : MonoBehaviour
         foreach (var node in path) 
         {
             Gizmos.color = Color.purple;
-            Gizmos.DrawWireCube(node.worldPos, Vector3.one * Grid.Instance.nodeRadius);
+            Gizmos.DrawWireCube(node.worldPos, Vector3.one * AStarGrid.Instance.nodeRadius);
         }
     }
 }

@@ -14,8 +14,8 @@ public class Pathfinding
         } }
     public List<Node> FindPath(Vector3 startpos, Vector3 endpos) 
     {
-        Node startNode = Grid.Instance.GetNodeFromWorldpos(startpos);
-        Node endNode = Grid.Instance.GetNodeFromWorldpos(endpos);
+        Node startNode = AStarGrid.Instance.GetNodeFromWorldpos(startpos);
+        Node endNode = AStarGrid.Instance.GetNodeFromWorldpos(endpos);
         
         List<Node> openSet = new List<Node>();
         HashSet<Node> closedSet = new HashSet<Node>();
@@ -39,7 +39,7 @@ public class Pathfinding
             {
                 return RetracePath(startNode,endNode);
             };
-            foreach (Node neighbour in Grid.Instance.GetNeighbours(currentNode)) 
+            foreach (Node neighbour in AStarGrid.Instance.GetNeighbours(currentNode)) 
             {
                 bool hasNode = closedSet.Contains(neighbour);
                 if (!neighbour.walkAble || hasNode) 

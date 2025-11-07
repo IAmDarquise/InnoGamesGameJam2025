@@ -13,10 +13,10 @@ public class WalkerEnemyBehaviour : EnemyBehaviour
     {
         if(currentPath == null ||  currentPath.Count == 0) 
         {
-            int randX = Random.Range(0,Grid.Instance.gridSizeX);
-            int randY = Random.Range(0,Grid.Instance.gridSizeY);
+            int randX = Random.Range(0,AStarGrid.Instance.gridSizeX);
+            int randY = Random.Range(0,AStarGrid.Instance.gridSizeY);
 
-            currentPath = Pathfinding.Instance.FindPath(enemy.transform.position, Grid.Instance.grid[randX,randY].worldPos);
+            currentPath = Pathfinding.Instance.FindPath(enemy.transform.position, AStarGrid.Instance.grid[randX,randY].worldPos);
         }
         Vector3 dir = currentPath[0].worldPos - enemy.transform.position;
         dir.y = 0;
