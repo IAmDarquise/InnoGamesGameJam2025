@@ -1,0 +1,16 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/RuleMachine/Style_RuleMachine.uss?fileID=7433441132597879392&amp;guid=1210dfd0228e1f742b3059fd81076e51&amp;type=3#Style_RuleMachine" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement name="Slots" style="flex-grow: 1; align-self: center; justify-content: space-evenly; visibility: hidden;">
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(255, 0, 209, 0.83); width: 1000px; height: 200px; min-width: 1000px; max-width: 1000px; min-height: 200px; max-height: 200px;" />
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(255, 0, 209, 0.83); width: 1000px; height: 200px; min-width: 1000px; max-width: 1000px; min-height: 200px; max-height: 200px;" />
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(255, 0, 209, 0.83); width: 1000px; height: 200px; min-width: 1000px; max-width: 1000px; min-height: 200px; max-height: 200px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="VisualElement" class="ruleMachine" style="flex-grow: 1; height: 800px; width: 100px; min-width: 100px; max-width: 100px; min-height: 800px; max-height: 800px; align-self: flex-start; position: absolute;" />
+    <ui:VisualElement class="ruleMachine" style="flex-grow: 1; position: absolute; height: 800px; width: 100px; min-width: 100px; max-width: 100px; min-height: 800px; max-height: 800px; align-self: flex-end;" />
+    <ui:VisualElement class="ruleMachine" style="flex-grow: 1; position: absolute; height: 50px; width: 1000px; min-width: 1000px; max-width: 1000px; min-height: 50px; max-height: 50px; align-self: center;" />
+    <ui:VisualElement class="ruleMachine" style="flex-grow: 1; position: absolute; height: 50px; width: 1000px; min-width: 1000px; max-width: 1000px; min-height: 50px; max-height: 50px; align-self: center; top: 100%; translate: 0 -100%;" />
+    <ui:VisualElement class="ruleMachine" style="flex-grow: 1; position: absolute; height: 50px; width: 1000px; min-width: 1000px; max-width: 1000px; min-height: 50px; max-height: 50px; align-self: center; top: 250px;" />
+    <ui:VisualElement class="ruleMachine" style="flex-grow: 1; position: absolute; height: 50px; width: 1000px; min-width: 1000px; max-width: 1000px; min-height: 50px; max-height: 50px; align-self: center; top: 500px;" />
+</ui:UXML>
