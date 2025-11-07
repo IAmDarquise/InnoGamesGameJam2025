@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
+    public Transform groundCheck;
+    public  float groundDistance = 0.4f;
     bool grounded;
 
     public Transform orientation;
@@ -31,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        readyToJump = true;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        grounded = grounded = Physics.CheckSphere(groundCheck.position, groundDistance, whatIsGround); 
 
         MyInput();
         SpeedControl();
