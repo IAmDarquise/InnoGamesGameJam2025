@@ -22,7 +22,11 @@ public class WaveSystem : MonoBehaviour
     public float strengthMultiplierPerWave = 1f;
     private int deadEnemies;
     private int enemyCount;
-    private int enemiesLeftToSpawn;
+
+    private int ableToSpawn;
+
+
+    private int spawnedEnemies = 0;
     private void Awake()
     {
         if(instance == null || instance == this)
@@ -40,8 +44,9 @@ public class WaveSystem : MonoBehaviour
     private void InitNewWave() 
     {
         currentWave++;
+        spawnedEnemies = 0;
         enemyCount = waveTemplate.overallEnemyCountInWave * currentWave;
-        enemiesLeftToSpawn = Mathf.Clamp(enemyCount,0,maxEnemiesAllowedSimultaneously);
+        ableToSpawn = maxEnemiesAllowedSimultaneously;
         deadEnemies = 0;
         PrepareEnemiesInstaniated();
         //PreapareEnemiesPooled();
@@ -76,7 +81,8 @@ public class WaveSystem : MonoBehaviour
         {
             currentEnemyPrefab = 0;
         }
-        enemiesLeftToSpawn--;
+        ableToSpawn--;
+        spawnedEnemies++;
         SpawnIntervalInstaniated();
     }
 
@@ -100,21 +106,11 @@ public class WaveSystem : MonoBehaviour
             pooledEnemies.Add(tmpEnemy);
             deactivatedEnemies.Add(tmpEnemy);
         }
-        for(int i = enemiesLeftToSpawn-1; i >= 0; i--)
-        {
-            if(i >= deactivatedEnemies.Count) 
-            {
-                continue;
-            }
-            ActivateEnemy(deactivatedEnemies[i]);
-
-        }
         return;
     }
 
     private void ActivateEnemy(BaseEnemy enemyToActivate) 
     {
-        enemiesLeftToSpawn--;
         int currentSpawnpoint = Random.Range(0, spawnPoints.Count);
         enemyToActivate.transform.position = spawnPoints[currentSpawnpoint].transform.position;
         //enemyToActivate.gameObject.SetActive(true);
@@ -143,18 +139,21 @@ public class WaveSystem : MonoBehaviour
             InitNewWave();
             return;
         }
-        enemiesLeftToSpawn++;
+        if (spawnedEnemies < enemyCount) 
+        {
+            ableToSpawn++;
+        }
     }
 
 
     private async void SpawnIntervalInstaniated() 
     {
-        if (enemyCount-deadEnemies <= 0)
+        if (spawnedEnemies == enemyCount)
         {
             return;
         }
 
-        if(enemiesLeftToSpawn > 0) 
+        if(ableToSpawn > 0) 
         {
             SpawnNewEnemieInstaniated();
         }
@@ -163,17 +162,7 @@ public class WaveSystem : MonoBehaviour
 
     }
 
-    private async void SpawnIntervalPooled() 
-    {
-        if(enemiesLeftToSpawn <= 0) 
-        {
-            return;
-        }
-        int randID = Random.Range(0,deactivatedEnemies.Count);
-        ActivateEnemy(deactivatedEnemies[randID]);
-        await Task.Delay(Mathf.RoundToInt( waveTemplate.spawnInterval*1000) );
-        SpawnIntervalPooled();
-    }
+   
 
 
 

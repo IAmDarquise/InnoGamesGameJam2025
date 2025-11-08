@@ -18056,7 +18056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6592600822033452638, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
       propertyPath: rateOfFirePerSecond
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7444476300408417338, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
       propertyPath: m_LocalPosition.x
