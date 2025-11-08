@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class BaseEnemy : MonoBehaviour
+public class BaseEnemy : MonoBehaviour, IHitable
 {
-    [SerializeField] public Transform m_Target;
+    public float maxHp;
+    private float currentHP;
+    public NavMeshAgent agent;
+    public Transform target;
     [SerializeField] private EnemyBehaviour behaviour;
     public Rigidbody rigid;
-    public List<Node> path;
     public void SetBehaviour(EnemyBehaviour newBehaviour) 
     {
         behaviour = newBehaviour;
@@ -14,19 +17,21 @@ public class BaseEnemy : MonoBehaviour
     private void Start()
     {
         behaviour = new WalkerEnemyBehaviour();
-    }
-
-    public void Update()
-    {
         behaviour.Move(this);
     }
 
-    private void OnDrawGizmos()
+    public void TakeDamage(int damage)
     {
-        foreach (var node in path) 
+        currentHP -= damage;
+        if(currentHP <= 0) 
         {
-            Gizmos.color = Color.purple;
-            Gizmos.DrawWireCube(node.worldPos, Vector3.one * Grid.Instance.nodeRadius);
+            this.gameObject.SetActive(false);
         }
+    }
+
+    private void OnEnable()
+    {
+        currentHP = maxHp;
+        behaviour.Move(this);
     }
 }

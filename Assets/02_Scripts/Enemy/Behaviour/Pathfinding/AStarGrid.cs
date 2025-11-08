@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class Grid : MonoBehaviour
+public class AStarGrid : MonoBehaviour
 {
-    private static Grid instance;
-    public static Grid Instance {  get { return instance; } } 
+    private static AStarGrid instance;
+    public static AStarGrid Instance {  get { return instance; } } 
     [SerializeField] private Vector3 debug_vector3_playerPos = Vector3.zero;
     public LayerMask unwalkableMask;
     public Vector2 worldGridSize;

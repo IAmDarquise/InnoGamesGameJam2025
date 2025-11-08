@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
+    public Transform groundCheck;
+    public  float groundDistance = 0.4f;
     bool grounded;
 
     public Transform orientation;
@@ -31,16 +33,16 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        readyToJump = true;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        readyToJump = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        grounded = grounded = Physics.CheckSphere(groundCheck.position, groundDistance, whatIsGround); 
 
         MyInput();
         SpeedControl();
@@ -68,8 +70,9 @@ public class PlayerMovement : MonoBehaviour
         // when to jump
         if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
+
+            // readyToJump was never set to true so jumping was never possible
             readyToJump = false;
-            print("Amogus");
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
