@@ -47,18 +47,18 @@ public class BaseEnemy : MonoBehaviour, IHitable
         currentHP -= damage;
         if(currentHP <= 0) 
         {
-            //enemyVis.enabled = false;
+            enemyVis.enabled = false;
             WaveSystem.Instance?.EnemyDied(this);
             isDead = true;
             Destroy(gameObject);
-            //gameObject.layer = LayerMask.NameToLayer("Props");
-            //anim.speed = 0;
-            //enemyVis.transform.LookAt(enemyVis.transform.position + new Vector3(0,1,0));
-           
-            //enemyVis.transform.localPosition = new Vector3(0,-0.45f + Random.Range(0.0000001f, 1f),0);
-            //Destroy(GetComponent<Rigidbody>());
-            //Destroy(GetComponent<Collider>());
-            //this.gameObject.SetActive(false);
+            gameObject.layer = LayerMask.NameToLayer("Props");
+            anim.speed = 0;
+            enemyVis.transform.LookAt(enemyVis.transform.position + new Vector3(0, 1, 0));
+
+            enemyVis.transform.localPosition = new Vector3(0, -0.45f + Random.Range(0.0000001f, 1f), 0);
+            Destroy(GetComponent<Rigidbody>());
+            Destroy(GetComponent<Collider>());
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -73,11 +73,12 @@ public class BaseEnemy : MonoBehaviour, IHitable
 
     private async void Attack() 
     {
-        if (true) 
+        if (player == null) 
         {
+            await Task.Delay(attackCheckInterval);
+            Attack();
             return;
         }
-
         if(!(Vector3.Distance( transform.position,player.gameObject.transform.position) <= attackRange)) 
         {
             await Task.Delay(attackCheckInterval);

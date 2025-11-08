@@ -182,7 +182,7 @@ MonoBehaviour:
     m_Bits: 128
   anim: {fileID: 1857642165804843921}
   maxHp: 0
-  speed: 20
+  speed: 5
   agent: {fileID: 6957456920351076755}
   target: {fileID: 0}
   player: {fileID: 0}
