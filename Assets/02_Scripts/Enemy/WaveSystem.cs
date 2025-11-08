@@ -66,9 +66,11 @@ public class WaveSystem : MonoBehaviour
 
     private void SpawnNewEnemieInstaniated()
     {
+        int currentSpawnpoint = Random.Range(0, spawnPoints.Count);
         BaseEnemy tmpEnemy = Instantiate(enemyPrefabs[currentEnemyPrefab]);
         tmpEnemy.player = player;
         tmpEnemy.target = player.transform;
+        tmpEnemy.transform.position = spawnPoints[currentSpawnpoint].position;
         currentEnemyPrefab++;
         if (currentEnemyPrefab >= enemyPrefabs.Count)
         {
