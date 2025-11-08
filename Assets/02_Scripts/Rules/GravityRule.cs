@@ -5,7 +5,7 @@ public class GravityRule : RuleFunction
 {
     public override void Activate()
     {
-        Physics.gravity = new Vector3(0, -1.62f, 0);
+        Physics.gravity += new Vector3(0, 3f, 0);
     }
 
     public override void PlayerActivate(PlayerMovement player)
