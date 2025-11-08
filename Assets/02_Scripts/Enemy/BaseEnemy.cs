@@ -2,8 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BaseEnemy : MonoBehaviour
+public class BaseEnemy : MonoBehaviour, IHitable
 {
+    public float maxHp;
+    private float currentHP;
     public NavMeshAgent agent;
     public Transform target;
     [SerializeField] private EnemyBehaviour behaviour;
@@ -18,5 +20,18 @@ public class BaseEnemy : MonoBehaviour
         behaviour.Move(this);
     }
 
-    
+    public void TakeDamage(int damage)
+    {
+        currentHP -= damage;
+        if(currentHP <= 0) 
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnEnable()
+    {
+        currentHP = maxHp;
+        behaviour.Move(this);
+    }
 }
