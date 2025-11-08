@@ -316,9 +316,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TizianManager
   _uiDoc: {fileID: 1434194984}
-  _picture1: {fileID: 2800000, guid: 9c32e282425606a4692ab64828b8e5b5, type: 3}
-  _picture2: {fileID: 2800000, guid: a2d8b08b5ed4ad74e82824eb6016f79f, type: 3}
-  _picture3: {fileID: 2800000, guid: c37ae7d3fe570064aa8bba1c8ab4e012, type: 3}
+  _picture1: {fileID: 2800000, guid: 57897940cbaaed94d8928e79ce4abc60, type: 3}
+  _picture2: {fileID: 2800000, guid: 4e1c462a2c0ba3546a5981a0074318dd, type: 3}
+  _picture3: {fileID: 2800000, guid: db7a6856f9950fa4fa709eda03304eb1, type: 3}
 --- !u!95 &1434194987
 Animator:
   serializedVersion: 7
