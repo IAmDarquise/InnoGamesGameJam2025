@@ -44,7 +44,7 @@ public class UIController_RuleMachineSlot : MonoBehaviour
         _ruleName.text = rule.ruleName;
 
         Vector3 newVector = new Vector3(_totalRotationDegrees, 0, 0);
-        transform.DORotate(newVector, _spinDuration, RotateMode.FastBeyond360);
+        transform.DOLocalRotate(newVector, _spinDuration, RotateMode.FastBeyond360);
 
         _isRotating = false;
         

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6957456920351076755}
   - component: {fileID: 4569835987648687090}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: EnemyTizianPascal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,13 +176,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b65ac49859cd2b459957edd21b036e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseEnemy
-  enemyVis: {fileID: 2834456797890694569}
+  enemyVis: {fileID: 8177667169929109937}
   propLayer:
     serializedVersion: 2
     m_Bits: 128
   anim: {fileID: 1857642165804843921}
-  maxHp: 50
-  speed: 20
+  maxHp: 0
+  speed: 5
   agent: {fileID: 6957456920351076755}
   target: {fileID: 0}
   player: {fileID: 0}
@@ -199,6 +199,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3351157674564428473}
     m_Modifications:
+    - target: {fileID: 2177661507639197359, guid: c93135878e6bce3468833846934e6efe, type: 3}
+      propertyPath: _picture1
+      value: 
+      objectReference: {fileID: 2800000, guid: e40a0b2260c3b7a4db9c64a19e68c9e4, type: 3}
+    - target: {fileID: 2177661507639197359, guid: c93135878e6bce3468833846934e6efe, type: 3}
+      propertyPath: _picture2
+      value: 
+      objectReference: {fileID: 2800000, guid: 537ff898938b7414299cb8d18d251be3, type: 3}
+    - target: {fileID: 2177661507639197359, guid: c93135878e6bce3468833846934e6efe, type: 3}
+      propertyPath: _picture3
+      value: 
+      objectReference: {fileID: 2800000, guid: b01de93e973deea47838207a708c0a70, type: 3}
     - target: {fileID: 3726655254002029545, guid: c93135878e6bce3468833846934e6efe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.06624
@@ -258,14 +270,14 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2353468767520075927, guid: c93135878e6bce3468833846934e6efe, type: 3}
   m_PrefabInstance: {fileID: 4138413241922974470}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2834456797890694569 stripped
+--- !u!114 &8177667169929109937 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2177661507639197359, guid: c93135878e6bce3468833846934e6efe, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5193336586148303543, guid: c93135878e6bce3468833846934e6efe, type: 3}
   m_PrefabInstance: {fileID: 4138413241922974470}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20f7d26ad80e804188d75d61210d1e7, type: 3}
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TizianManager
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument

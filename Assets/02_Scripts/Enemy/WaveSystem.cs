@@ -106,15 +106,6 @@ public class WaveSystem : MonoBehaviour
             pooledEnemies.Add(tmpEnemy);
             deactivatedEnemies.Add(tmpEnemy);
         }
-        for(int i = enemiesLeftToSpawn-1; i >= 0; i--)
-        {
-            if(i >= deactivatedEnemies.Count) 
-            {
-                continue;
-            }
-            ActivateEnemy(deactivatedEnemies[i]);
-
-        }
         return;
     }
 
