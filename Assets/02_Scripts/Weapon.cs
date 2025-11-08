@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -5,6 +6,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] KeyCode keyToShootOn;
     [SerializeField] LayerMask hitableLayer;
     [SerializeField] Transform muzzlePosition;
+    [SerializeField] List<ParticleSystem> impactVFXs;
+    private int currentVFXID = 0;
     public int damage;
     public float rateOfFirePerSecond;
     public float maxAccuracyMalus;
@@ -49,7 +52,15 @@ public class Weapon : MonoBehaviour
         Ray gunLine = new Ray(muzzlePosition.position, dir);
         if(Physics.Raycast(gunLine, out RaycastHit hitinfo, 30, hitableLayer)) 
         {
-            hitinfo.collider.GetComponent<IHitable>().TakeDamage(damage);
+
+            impactVFXs[currentVFXID].transform.position = hitinfo.point;
+            impactVFXs[currentVFXID].Play();
+            currentVFXID++;
+            if(currentVFXID >= impactVFXs.Count) 
+            {
+                currentVFXID = 0;
+            }
+            hitinfo.collider.GetComponent<IHitable>()?.TakeDamage(damage);
         }
     
     }
