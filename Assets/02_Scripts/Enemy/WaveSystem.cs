@@ -23,6 +23,11 @@ public class WaveSystem : MonoBehaviour
     private int deadEnemies;
     private int enemyCount;
     private int enemiesLeftToSpawn;
+
+    private int ableToSpawn;
+
+
+    private int spawnedEnemies = 0;
     private void Awake()
     {
         if(instance == null || instance == this)
@@ -41,7 +46,7 @@ public class WaveSystem : MonoBehaviour
     {
         currentWave++;
         enemyCount = waveTemplate.overallEnemyCountInWave * currentWave;
-        enemiesLeftToSpawn = Mathf.Clamp(enemyCount,0,maxEnemiesAllowedSimultaneously);
+        ableToSpawn = maxEnemiesAllowedSimultaneously;
         deadEnemies = 0;
         PrepareEnemiesInstaniated();
         //PreapareEnemiesPooled();
@@ -76,7 +81,8 @@ public class WaveSystem : MonoBehaviour
         {
             currentEnemyPrefab = 0;
         }
-        enemiesLeftToSpawn--;
+        ableToSpawn--;
+        spawnedEnemies++;
         SpawnIntervalInstaniated();
     }
 
@@ -143,18 +149,21 @@ public class WaveSystem : MonoBehaviour
             InitNewWave();
             return;
         }
-        enemiesLeftToSpawn++;
+        if (spawnedEnemies < enemyCount) 
+        {
+            ableToSpawn++;
+        }
     }
 
 
     private async void SpawnIntervalInstaniated() 
     {
-        if (enemyCount-deadEnemies <= 0)
+        if (spawnedEnemies == enemyCount)
         {
             return;
         }
 
-        if(enemiesLeftToSpawn > 0) 
+        if(ableToSpawn > 0) 
         {
             SpawnNewEnemieInstaniated();
         }
