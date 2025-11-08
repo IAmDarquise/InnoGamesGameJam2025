@@ -31,7 +31,7 @@ public class UIController_RuleMachineSlot : MonoBehaviour
 
 
 
-    public void Spin(Rule rule)
+    public void Spin(RuleInfo rule)
     {
 
         if(_isRotating)

@@ -9,7 +9,7 @@ public class RuleMachine : MonoBehaviour
     [SerializeField] UIController_RuleMachineSlot slot2;
     [SerializeField] UIController_RuleMachineSlot slot3;
 
-    [SerializeField] List<Rule> _allRulez = new List<Rule>();
+    [SerializeField] List<RuleInfo> _allRulez = new List<RuleInfo>();
 
 
 
