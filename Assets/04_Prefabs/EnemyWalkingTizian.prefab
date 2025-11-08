@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6957456920351076755}
   - component: {fileID: 4569835987648687090}
   m_Layer: 6
-  m_Name: EnemyTizianWalking
+  m_Name: EnemyWalkingTizian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

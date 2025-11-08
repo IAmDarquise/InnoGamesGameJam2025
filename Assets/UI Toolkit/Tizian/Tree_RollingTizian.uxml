@@ -1,0 +1,3 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Picture1" style="flex-grow: 1; position: absolute; width: 512px; min-width: 512px; max-width: 512px; height: 512px; min-height: 512px; max-height: 512px; background-image: url(&quot;project://database/Assets/03_Art/RuleMachine/1000_F_390147545_oAdZHfRVXp87JA3WOUiNF1GuwQLr0dmf-2351373791.jpg?fileID=2800000&amp;guid=9c32e282425606a4692ab64828b8e5b5&amp;type=3#1000_F_390147545_oAdZHfRVXp87JA3WOUiNF1GuwQLr0dmf-2351373791&quot;);" />
+</ui:UXML>
