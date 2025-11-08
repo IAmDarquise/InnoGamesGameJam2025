@@ -9,7 +9,7 @@ public class RuleMachine : MonoBehaviour
     [SerializeField] UIController_RuleMachineSlot slot2;
     [SerializeField] UIController_RuleMachineSlot slot3;
 
-    [SerializeField] List<RuleInfo> _allRulez = new List<RuleInfo>();
+    [SerializeField] public List<RuleInfo> _allRulez = new List<RuleInfo>();
 
 
 
@@ -30,7 +30,7 @@ public class RuleMachine : MonoBehaviour
     }
 
 
-    private async void SpinTheMachine()
+    public async void SpinTheMachine()
     {
 
 
