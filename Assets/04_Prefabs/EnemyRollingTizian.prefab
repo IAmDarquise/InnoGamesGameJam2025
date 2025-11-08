@@ -176,6 +176,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b65ac49859cd2b459957edd21b036e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseEnemy
+  enemyVis: {fileID: 2273747801571568429}
+  propLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  anim: {fileID: 8590258775109519629}
   maxHp: 0
   speed: 20
   agent: {fileID: 6957456920351076755}
@@ -243,8 +248,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13e883d2b4ef5d94ea8f80a3e72de56f, type: 3}
+--- !u!114 &2273747801571568429 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5193336586148303543, guid: 13e883d2b4ef5d94ea8f80a3e72de56f, type: 3}
+  m_PrefabInstance: {fileID: 6313916420696013210}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
 --- !u!4 &7217076390325463667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3726655254002029545, guid: 13e883d2b4ef5d94ea8f80a3e72de56f, type: 3}
+  m_PrefabInstance: {fileID: 6313916420696013210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8590258775109519629 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2353468767520075927, guid: 13e883d2b4ef5d94ea8f80a3e72de56f, type: 3}
   m_PrefabInstance: {fileID: 6313916420696013210}
   m_PrefabAsset: {fileID: 0}

@@ -21957,6 +21957,9 @@ MonoBehaviour:
   player: {fileID: 332684813}
   enemyPrefabs:
   - {fileID: 4569835987648687090, guid: fc5bc4552589468469acba4a51303e57, type: 3}
+  - {fileID: 4569835987648687090, guid: 87ebb611c509379499b5bb5cb8d683de, type: 3}
+  - {fileID: 4569835987648687090, guid: 1cbd7acb24bdaaf4381acbcca541bd33, type: 3}
+  - {fileID: 4569835987648687090, guid: 3a32af4987455d54da121b96f7d28a5a, type: 3}
   timeDelayBeforeSpawningStarts: 5000
   spawnPoints:
   - {fileID: 1939591063}
