@@ -10,7 +10,8 @@ using UnityEngine;
 public class RuleManager : MonoBehaviour
 {
     [SerializeField] private List<RuleInfo> rules = new List<RuleInfo>();
-    [SerializeField] private RuleMachine ruleMachine;
+    [SerializeField] private RuleMachine ruleMachine1;
+    [SerializeField] private RuleMachine ruleMachine2;
     private PlayerMovement playerMovement;
     private Weapon playerWeapon;
 
@@ -18,19 +19,10 @@ public class RuleManager : MonoBehaviour
     {
         playerMovement = FindObjectOfType<PlayerMovement>();
         playerWeapon = FindObjectOfType<Weapon>();
+        WaveSystem.Instance.onWaveComplete += SelectRule;
     }
 
-    private void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Debug.Log("K pressed");
-            SelectRule();
-        }
-    }
-
-    public void SelectRule()
+    public void SelectRule(int wavesCompleted)
     {
         Rule selectedRule1 = new Rule(rules[Random.Range(0, rules.Count)]);
         Rule selectedRule2 = new Rule(rules[Random.Range(0, rules.Count)]);
@@ -38,11 +30,16 @@ public class RuleManager : MonoBehaviour
         UseRules(selectedRule1);
         UseRules(selectedRule2);
         UseRules(selectedRule3);
-        ruleMachine._allRulez.Clear();
-        ruleMachine._allRulez.Add(selectedRule1._ruleInfo);
-        ruleMachine._allRulez.Add(selectedRule2._ruleInfo);
-        ruleMachine._allRulez.Add(selectedRule3._ruleInfo);
-        ruleMachine.SpinTheMachine();
+        ruleMachine1._allRulez.Clear();
+        ruleMachine2._allRulez.Clear();
+        ruleMachine1._allRulez.Add(selectedRule1._ruleInfo);
+        ruleMachine1._allRulez.Add(selectedRule2._ruleInfo);
+        ruleMachine1._allRulez.Add(selectedRule3._ruleInfo);
+        ruleMachine2._allRulez.Add(selectedRule1._ruleInfo);
+        ruleMachine2._allRulez.Add(selectedRule2._ruleInfo);
+        ruleMachine2._allRulez.Add(selectedRule3._ruleInfo);
+        ruleMachine1.SpinTheMachine();
+        ruleMachine2.SpinTheMachine();
     }
 
     public void UseRules(Rule rule)
