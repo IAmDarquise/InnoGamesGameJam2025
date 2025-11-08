@@ -181,7 +181,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   anim: {fileID: 1857642165804843921}
-  maxHp: 50
+  maxHp: 1
   speed: 20
   agent: {fileID: 6957456920351076755}
   target: {fileID: 0}
