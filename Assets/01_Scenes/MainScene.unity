@@ -10680,13 +10680,17 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 914657426345228473, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2839438621930038196, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 332684813}
+    - targetCorrespondingSourceObject: {fileID: 2108554386071582382, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 332684815}
   m_SourcePrefab: {fileID: 100100000, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
 --- !u!1 &332684812 stripped
 GameObject:
@@ -10707,6 +10711,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHP: 100
   currentHP: 100
+--- !u!1 &332684814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2108554386071582382, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+  m_PrefabInstance: {fileID: 332684811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &332684815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332684814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!43 &350879938
 Mesh:
   m_ObjectHideFlags: 0
