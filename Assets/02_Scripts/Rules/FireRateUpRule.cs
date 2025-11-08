@@ -1,11 +1,12 @@
 using UnityEngine;
 
 [System.Serializable]
-public class GravityRule : RuleFunction
+public class FireRateUpRule : RuleFunction
 {
+    float fireRate;
     public override void Activate()
     {
-        Physics.gravity = new Vector3(0, -1.62f, 0);
+        return;
     }
 
     public override void PlayerActivate(PlayerMovement player)
@@ -15,12 +16,13 @@ public class GravityRule : RuleFunction
 
     public override void WeaponActivate(Weapon weapon)
     {
-        return;
+        fireRate = weapon.rateOfFirePerSecond;
+        weapon.rateOfFirePerSecond *= 1.5f;
     }
 
     public override void Deactivate()
     {
-        Physics.gravity = new Vector3(0, -9.81f, 0);
+        return;
     }
 
     public override void PlayerDeactivate(PlayerMovement player)
@@ -30,6 +32,6 @@ public class GravityRule : RuleFunction
 
     public override void WeaponDeactivate(Weapon weapon)
     {
-        return;
+        weapon.rateOfFirePerSecond = fireRate;
     }
 }

@@ -1,11 +1,11 @@
 using UnityEngine;
 
 [System.Serializable]
-public class GravityRule : RuleFunction
+public class SpeedUpRule : RuleFunction
 {
     public override void Activate()
     {
-        Physics.gravity = new Vector3(0, -1.62f, 0);
+        Time.timeScale *= 1.5f;
     }
 
     public override void PlayerActivate(PlayerMovement player)
@@ -20,7 +20,7 @@ public class GravityRule : RuleFunction
 
     public override void Deactivate()
     {
-        Physics.gravity = new Vector3(0, -9.81f, 0);
+        Time.timeScale = 1f;
     }
 
     public override void PlayerDeactivate(PlayerMovement player)
