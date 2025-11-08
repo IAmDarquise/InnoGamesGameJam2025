@@ -22,7 +22,6 @@ public class WaveSystem : MonoBehaviour
     public float strengthMultiplierPerWave = 1f;
     private int deadEnemies;
     private int enemyCount;
-    private int enemiesLeftToSpawn;
 
     private int ableToSpawn;
 
@@ -45,6 +44,7 @@ public class WaveSystem : MonoBehaviour
     private void InitNewWave() 
     {
         currentWave++;
+        spawnedEnemies = 0;
         enemyCount = waveTemplate.overallEnemyCountInWave * currentWave;
         ableToSpawn = maxEnemiesAllowedSimultaneously;
         deadEnemies = 0;
@@ -120,7 +120,6 @@ public class WaveSystem : MonoBehaviour
 
     private void ActivateEnemy(BaseEnemy enemyToActivate) 
     {
-        enemiesLeftToSpawn--;
         int currentSpawnpoint = Random.Range(0, spawnPoints.Count);
         enemyToActivate.transform.position = spawnPoints[currentSpawnpoint].transform.position;
         //enemyToActivate.gameObject.SetActive(true);
@@ -172,17 +171,7 @@ public class WaveSystem : MonoBehaviour
 
     }
 
-    private async void SpawnIntervalPooled() 
-    {
-        if(enemiesLeftToSpawn <= 0) 
-        {
-            return;
-        }
-        int randID = Random.Range(0,deactivatedEnemies.Count);
-        ActivateEnemy(deactivatedEnemies[randID]);
-        await Task.Delay(Mathf.RoundToInt( waveTemplate.spawnInterval*1000) );
-        SpawnIntervalPooled();
-    }
+   
 
 
 
