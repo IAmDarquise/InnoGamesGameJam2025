@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Transform muzzlePosition;
     [SerializeField] List<ParticleSystem> impactVFXs;
 
-    private float lastReload = float.MaxValue;
+    private float lastReload = float.MinValue;
     private int currentVFXID = 0;
     public float damage;
     public float rateOfFirePerSecond;
