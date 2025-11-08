@@ -50,14 +50,14 @@ public class BaseEnemy : MonoBehaviour, IHitable
             enemyVis.enabled = false;
             WaveSystem.Instance?.EnemyDied(this);
             isDead = true;
-
-            gameObject.layer = LayerMask.NameToLayer("Props");
-            anim.speed = 0;
-            enemyVis.transform.LookAt(enemyVis.transform.position + new Vector3(0,1,0));
+            Destroy(gameObject);
+            //gameObject.layer = LayerMask.NameToLayer("Props");
+            //anim.speed = 0;
+            //enemyVis.transform.LookAt(enemyVis.transform.position + new Vector3(0,1,0));
            
-            enemyVis.transform.localPosition = new Vector3(0,-0.45f + Random.Range(0.0000001f, 1f),0);
-            Destroy(GetComponent<Rigidbody>());
-            Destroy(GetComponent<Collider>());
+            //enemyVis.transform.localPosition = new Vector3(0,-0.45f + Random.Range(0.0000001f, 1f),0);
+            //Destroy(GetComponent<Rigidbody>());
+            //Destroy(GetComponent<Collider>());
             //this.gameObject.SetActive(false);
         }
     }
