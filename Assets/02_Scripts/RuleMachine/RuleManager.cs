@@ -19,19 +19,10 @@ public class RuleManager : MonoBehaviour
     {
         playerMovement = FindObjectOfType<PlayerMovement>();
         playerWeapon = FindObjectOfType<Weapon>();
+        WaveSystem.Instance.onWaveComplete += SelectRule;
     }
 
-    private void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Debug.Log("K pressed");
-            SelectRule();
-        }
-    }
-
-    public void SelectRule()
+    public void SelectRule(int wavesCompleted)
     {
         Rule selectedRule1 = new Rule(rules[Random.Range(0, rules.Count)]);
         Rule selectedRule2 = new Rule(rules[Random.Range(0, rules.Count)]);
