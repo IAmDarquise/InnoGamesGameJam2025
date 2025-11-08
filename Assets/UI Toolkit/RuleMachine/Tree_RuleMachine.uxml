@@ -7,6 +7,7 @@
             <ui:VisualElement style="flex-grow: 1; width: 1000px; height: 200px; min-width: 1000px; max-width: 1000px; min-height: 200px; max-height: 200px; top: -2px;" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 1; position: absolute; background-image: url(&quot;project://database/Assets/03_Art/RuleMachine/1000_F_390147545_oAdZHfRVXp87JA3WOUiNF1GuwQLr0dmf-2351373791.jpg?fileID=2800000&amp;guid=9c32e282425606a4692ab64828b8e5b5&amp;type=3#1000_F_390147545_oAdZHfRVXp87JA3WOUiNF1GuwQLr0dmf-2351373791&quot;); width: 1200px; min-width: 1200px; max-width: 1200px; height: 800px; min-height: 800px; max-height: 800px; -unity-background-image-tint-color: rgba(161, 31, 105, 0.2);" />
     <ui:VisualElement name="VisualElement" class="ruleMachine" style="flex-grow: 1; height: 800px; width: 100px; min-width: 100px; max-width: 100px; min-height: 800px; max-height: 800px; align-self: flex-start; position: absolute;" />
     <ui:VisualElement class="ruleMachine" style="flex-grow: 1; position: absolute; height: 800px; width: 100px; min-width: 100px; max-width: 100px; min-height: 800px; max-height: 800px; align-self: flex-end;" />
     <ui:VisualElement class="ruleMachine" style="flex-grow: 1; position: absolute; height: 50px; width: 1000px; min-width: 1000px; max-width: 1000px; min-height: 50px; max-height: 50px; align-self: center;" />
