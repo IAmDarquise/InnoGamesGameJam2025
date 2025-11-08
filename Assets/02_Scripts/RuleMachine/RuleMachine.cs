@@ -14,7 +14,10 @@ public class RuleMachine : MonoBehaviour
 
 
 
-
+    //private void Start()
+    //{
+    //    SpinTheMachine();
+    //}
 
     private void Update()
     {

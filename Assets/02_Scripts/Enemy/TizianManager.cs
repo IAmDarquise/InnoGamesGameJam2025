@@ -28,10 +28,9 @@ public class TizianManager : MonoBehaviour
 
     public void SwitchPictureTo(int number)
     {
-        Debug.Log("Picture: " +  number);
-
         switch(number)
         {
+
             case 1:
                 _picture1VisualElement.style.backgroundImage = _picture1;
                 break;
@@ -44,6 +43,17 @@ public class TizianManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    void LateUpdate()
+    {
+        Camera cam = Camera.main;
+        if (cam == null)
+        {
+            return;
+        }
+
+        transform.LookAt(transform.position + cam.transform.rotation * Vector3.forward, cam.transform.rotation * Vector3.up);
     }
 
 
