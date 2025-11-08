@@ -56,7 +56,7 @@ public class BaseEnemy : MonoBehaviour, IHitable
 
     private async void Attack() 
     {
-        if (isDead) 
+        if (true) 
         {
             return;
         }
