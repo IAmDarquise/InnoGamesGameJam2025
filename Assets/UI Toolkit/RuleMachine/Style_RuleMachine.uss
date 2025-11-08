@@ -1,0 +1,6 @@
+:root {
+}
+
+.ruleMachine {
+    background-color: rgba(53, 164, 150, 0.57);
+}
