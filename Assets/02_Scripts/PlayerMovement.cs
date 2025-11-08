@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        readyToJump = true;
     }
 
     // Update is called once per frame
@@ -69,8 +70,9 @@ public class PlayerMovement : MonoBehaviour
         // when to jump
         if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
+
+            // readyToJump was never set to true so jumping was never possible
             readyToJump = false;
-            print("Amogus");
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
