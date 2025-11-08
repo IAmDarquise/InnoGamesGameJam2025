@@ -3,16 +3,14 @@ using UnityEngine;
 [System.Serializable]
 public class SpeedUpRule : RuleFunction
 {
-    float speed;
     public override void Activate()
     {
-        return;
+        Time.timeScale *= 1.5f;
     }
 
     public override void PlayerActivate(PlayerMovement player)
     {
-        speed = player.moveSpeed;
-        player.moveSpeed *= 1.5f;
+        return;
     }
 
     public override void WeaponActivate(Weapon weapon)
@@ -22,12 +20,12 @@ public class SpeedUpRule : RuleFunction
 
     public override void Deactivate()
     {
-        return;
+        Time.timeScale = 1f;
     }
 
     public override void PlayerDeactivate(PlayerMovement player)
     {
-        player.moveSpeed = speed;
+        return;
     }
 
     public override void WeaponDeactivate(Weapon weapon)

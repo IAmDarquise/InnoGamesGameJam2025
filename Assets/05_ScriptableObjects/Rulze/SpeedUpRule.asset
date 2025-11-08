@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpeedUpRule
   m_EditorClassIdentifier: Assembly-CSharp::RuleInfo
   ruleName: Speed Up
-  target: 0
+  target: 2
   function:
     rid: 6775939608369168449
   references:

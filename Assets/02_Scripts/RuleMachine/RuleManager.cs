@@ -9,21 +9,55 @@ using UnityEngine;
 /// </summary>
 public class RuleManager : MonoBehaviour
 {
-    [SerializeField] private List<Rule> rules = new List<Rule>();
+    [SerializeField] private List<RuleInfo> rules = new List<RuleInfo>();
     [SerializeField] private RuleMachine ruleMachine;
+    private PlayerMovement playerMovement;
+    private Weapon playerWeapon;
+
+    void Start()
+    {
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        playerWeapon = FindObjectOfType<Weapon>();
+    }
+
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log("K pressed");
+            SelectRule();
+        }
+    }
 
     public void SelectRule()
     {
-        Rule selectedRule1 = rules[Random.Range(0, rules.Count)];
-        Rule selectedRule2 = rules[Random.Range(0, rules.Count)];
-        Rule selectedRule3 = rules[Random.Range(0, rules.Count)];
-        selectedRule1.Use();
-        selectedRule2.Use();
-        selectedRule3.Use();
+        Rule selectedRule1 = new Rule(rules[Random.Range(0, rules.Count)]);
+        Rule selectedRule2 = new Rule(rules[Random.Range(0, rules.Count)]);
+        Rule selectedRule3 = new Rule(rules[Random.Range(0, rules.Count)]);
+        UseRules(selectedRule1);
+        UseRules(selectedRule2);
+        UseRules(selectedRule3);
         ruleMachine._allRulez.Clear();
         ruleMachine._allRulez.Add(selectedRule1._ruleInfo);
         ruleMachine._allRulez.Add(selectedRule2._ruleInfo);
         ruleMachine._allRulez.Add(selectedRule3._ruleInfo);
         ruleMachine.SpinTheMachine();
+    }
+
+    public void UseRules(Rule rule)
+    {
+        if (rule._ruleInfo.target == RuleInfo.RuleTarget.Global)
+        {
+            rule.Use();
+        }
+        else if (rule._ruleInfo.target == RuleInfo.RuleTarget.Player)
+        {
+            rule.UsePlayer(playerMovement);
+        }
+        else if (rule._ruleInfo.target == RuleInfo.RuleTarget.Weapon)
+        {
+            rule.UseWeapon(playerWeapon);
+        }
     }
 }

@@ -16,8 +16,28 @@ public class Rule
         _ruleFunc.Activate();
     }
 
+    public void UsePlayer(PlayerMovement player)
+    {
+        _ruleFunc.PlayerActivate(player);
+    }
+
+    public void UseWeapon(Weapon weapon)
+    {
+        _ruleFunc.WeaponActivate(weapon);
+    }
+
     public void Deactivate()
     {
         _ruleFunc.Deactivate();
+    }
+
+    public void DeactivatePlayer(PlayerMovement player)
+    {
+        _ruleFunc.PlayerDeactivate(player);
+    }
+
+    public void DeactivateWeapon(Weapon weapon)
+    {
+        _ruleFunc.WeaponDeactivate(weapon);
     }
 }
