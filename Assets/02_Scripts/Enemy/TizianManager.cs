@@ -11,19 +11,17 @@ public class TizianManager : MonoBehaviour
     [SerializeField] Texture2D _picture3;
 
     private VisualElement _picture1VisualElement;
-    private VisualElement _picture2VisualElement;
-    private VisualElement _picture3VisualElement;
+
 
     private void Awake()
     {
         _root = _uiDoc.rootVisualElement;
+        _picture1VisualElement = _root.Q<VisualElement>("Picture1");
     }
 
     private void Start()
     {
-        _picture1VisualElement = _root.Q<VisualElement>("Picture1");
-        _picture2VisualElement = _root.Q<VisualElement>("Picture2");
-        _picture3VisualElement = _root.Q<VisualElement>("Picture3");
+
     }
 
     public void SwitchPictureTo(int number)

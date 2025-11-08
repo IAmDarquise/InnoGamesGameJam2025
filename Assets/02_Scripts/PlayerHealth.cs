@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private UIController_HUD _hud;
+
     public float maxHP;
     public float currentHP;
     private int IMs = 500;
@@ -14,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
             return; 
         }
         currentHP -= damage;
+        _hud.DisplayPlayerHeath(currentHP);
         canTakeDamage = false;
         IFrames();
         if (currentHP <= 0) 
