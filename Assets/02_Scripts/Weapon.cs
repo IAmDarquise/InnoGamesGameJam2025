@@ -3,10 +3,16 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] private Transform explosionPos;
+    [SerializeField] private Transform instantiatePos;
+    [SerializeField] private Rigidbody yeetingCanon;
+    [SerializeField] List<Animator> animators;
     [SerializeField] KeyCode keyToShootOn;
     [SerializeField] LayerMask hitableLayer;
     [SerializeField] Transform muzzlePosition;
     [SerializeField] List<ParticleSystem> impactVFXs;
+
+    private float lastReload = float.MaxValue;
     private int currentVFXID = 0;
     public float damage;
     public float rateOfFirePerSecond;
@@ -29,8 +35,14 @@ public class Weapon : MonoBehaviour
     {
         if ((Input.GetKeyDown(keyToShootOn) || Input.GetKey(keyToShootOn)) && Time.time - lastShot >= 1/rateOfFirePerSecond)
         {
+            lastShot = Time.time;
             currentBulletCount++;
             Shoot();
+        }
+        if (Input.GetKeyDown(KeyCode.R) && Time.time - lastReload >=2)
+        {
+            lastShot = Time.time+2;
+            Reload();
         }
         
     }
@@ -39,16 +51,22 @@ public class Weapon : MonoBehaviour
     private void Reload() 
     {
         currentBulletCount = 0;
+        foreach (var animator in animators) 
+        {
+            animator.SetTrigger("Reload");
+        }
+        Rigidbody tmpRB = Instantiate(yeetingCanon);
+        
+        tmpRB.gameObject.transform.position = instantiatePos.position;
+        tmpRB.gameObject.transform.rotation = transform.rotation;
+        //tmpRB.AddExplosionForce(50, explosionPos.position, 20,5,ForceMode.Impulse);
+        tmpRB.AddForce((instantiatePos.position - explosionPos.position).normalized * Random.Range(100, 200));
         //Yeet gun
     }
 
     public void Shoot() 
     {
-        int lerpT = Mathf.Clamp(currentBulletCount, 0, maxSohtTakenIntoConsiderationForAccuracy)/currentBulletCount;
-        currentAccuracy = Mathf.RoundToInt( Mathf.Lerp(maxAccuracyMalus,0, lerpT));
-        int tmpX = x + Mathf.RoundToInt( Random.Range(-currentAccuracy, currentAccuracy + 1));
-        int tmpY = y + Mathf.RoundToInt( Random.Range(-currentAccuracy, currentAccuracy + 1));
-        Vector3 dir = Camera.main.ScreenToWorldPoint(new Vector3(tmpX,tmpY,100))-muzzlePosition.position;
+        Vector3 dir = Camera.main.ScreenToWorldPoint(new Vector3(x,y,100))-muzzlePosition.position;
         Ray gunLine = new Ray(muzzlePosition.position, dir);
         if(Physics.Raycast(gunLine, out RaycastHit hitinfo, 30, hitableLayer)) 
         {
@@ -63,12 +81,5 @@ public class Weapon : MonoBehaviour
             hitinfo.collider.GetComponent<IHitable>()?.TakeDamage(damage);
         }
     
-    }
-
-
-    private void OnDrawGizmos()
-    {
-
-
     }
 }

@@ -11,6 +11,7 @@ public class WaveSystem : MonoBehaviour
     public delegate void WaveComplete(int wavesCompleted);
     public WaveComplete onWaveComplete;
     private static WaveSystem instance;
+    public int timeDelayBeforeSpawningStarts = 5000;
     public static WaveSystem Instance{ get { return instance; } }
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private int maxEnemiesAllowedSimultaneously = 20;
@@ -40,16 +41,44 @@ public class WaveSystem : MonoBehaviour
     {
         currentWave++;
         enemyCount = waveTemplate.overallEnemyCountInWave * currentWave;
-        enemiesLeftToSpawn = maxEnemiesAllowedSimultaneously;
+        enemiesLeftToSpawn = Mathf.Clamp(enemyCount,0,maxEnemiesAllowedSimultaneously);
         deadEnemies = 0;
-        PreapareEnemies();
-        SetTargetForAllEnemies(player.transform);
+        PrepareEnemiesInstaniated();
+        //PreapareEnemiesPooled();
+        //SetTargetForAllEnemies(player.transform);
 
 
     }
 
 
-    private void PreapareEnemies() 
+
+    private void PrepareEnemiesInstaniated()
+    {
+        if (spawnPoints.Count == 0)
+        {
+            Debug.Log("No Spawnpoints set");
+            return;
+        }
+        SpawnIntervalInstaniated();
+
+
+    }
+
+    private void SpawnNewEnemieInstaniated()
+    {
+        BaseEnemy tmpEnemy = Instantiate(enemyPrefabs[currentEnemyPrefab]);
+        tmpEnemy.player = player;
+        tmpEnemy.target = player.transform;
+        currentEnemyPrefab++;
+        if (currentEnemyPrefab >= enemyPrefabs.Count)
+        {
+            currentEnemyPrefab = 0;
+        }
+        enemiesLeftToSpawn--;
+        SpawnIntervalInstaniated();
+    }
+
+    private void PreapareEnemiesPooled() 
     {
         if (spawnPoints.Count == 0) 
         {
@@ -69,7 +98,7 @@ public class WaveSystem : MonoBehaviour
             pooledEnemies.Add(tmpEnemy);
             deactivatedEnemies.Add(tmpEnemy);
         }
-        for(int i = maxEnemiesAllowedSimultaneously-1; i >= 0; i--)
+        for(int i = enemiesLeftToSpawn-1; i >= 0; i--)
         {
             if(i >= deactivatedEnemies.Count) 
             {
@@ -86,7 +115,8 @@ public class WaveSystem : MonoBehaviour
         enemiesLeftToSpawn--;
         int currentSpawnpoint = Random.Range(0, spawnPoints.Count);
         enemyToActivate.transform.position = spawnPoints[currentSpawnpoint].transform.position;
-        enemyToActivate.gameObject.SetActive(true);
+        //enemyToActivate.gameObject.SetActive(true);
+        enemyToActivate.ResetValues();
         deactivatedEnemies.Remove(enemyToActivate);
 
 
@@ -100,20 +130,38 @@ public class WaveSystem : MonoBehaviour
         }
     }
 
-    public void EnemyDied(BaseEnemy enemy) 
+    public async void EnemyDied(BaseEnemy enemy) 
     {
         deadEnemies++;
-        deactivatedEnemies.Add(enemy);
+        //deactivatedEnemies.Add(enemy);
         if(deadEnemies >= enemyCount) 
         {
             onWaveComplete?.Invoke(currentWave);
+            await Task.Delay(timeDelayBeforeSpawningStarts);
             InitNewWave();
             return;
         }
         enemiesLeftToSpawn++;
     }
 
-    private async void SpawnInterval() 
+
+    private async void SpawnIntervalInstaniated() 
+    {
+        if (enemyCount-deadEnemies <= 0)
+        {
+            return;
+        }
+
+        if(enemiesLeftToSpawn > 0) 
+        {
+            SpawnNewEnemieInstaniated();
+        }
+        await Task.Delay(Mathf.RoundToInt(waveTemplate.spawnInterval * 1000));
+        SpawnIntervalInstaniated();
+
+    }
+
+    private async void SpawnIntervalPooled() 
     {
         if(enemiesLeftToSpawn <= 0) 
         {
@@ -121,8 +169,8 @@ public class WaveSystem : MonoBehaviour
         }
         int randID = Random.Range(0,deactivatedEnemies.Count);
         ActivateEnemy(deactivatedEnemies[randID]);
-        await Task.Delay(Mathf.RoundToInt( waveTemplate.spawnInterval*1000));
-        SpawnInterval();
+        await Task.Delay(Mathf.RoundToInt( waveTemplate.spawnInterval*1000) );
+        SpawnIntervalPooled();
     }
 
 

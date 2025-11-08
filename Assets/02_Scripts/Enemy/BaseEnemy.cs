@@ -41,11 +41,13 @@ public class BaseEnemy : MonoBehaviour, IHitable
         {
             WaveSystem.Instance.EnemyDied(this);
             isDead = true;
-            this.gameObject.SetActive(false);
+            enabled = false;
+            transform.Rotate(new Vector3(0, 0, 90));
+            //this.gameObject.SetActive(false);
         }
     }
 
-    private void OnEnable()
+    public void ResetValues()
     {
         currentHP = maxHp;
         isDead = false;

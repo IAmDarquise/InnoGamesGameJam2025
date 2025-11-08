@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &218488361617781024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1672884178044511319}
+  m_Layer: 0
+  m_Name: WeaponSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1672884178044511319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218488361617781024}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.68174297, y: -0, z: -0, w: 0.73159176}
+  m_LocalPosition: {x: -0.339, y: 0.618, z: -1.609}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6157261855421923295}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482478754233066252
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,6 +5032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2532307698349786941}
+  - component: {fileID: 2580143501594150205}
   m_Layer: 0
   m_Name: Scanone
   m_TagString: Untagged
@@ -5031,6 +5063,28 @@ Transform:
   - {fileID: 8046757154272601818}
   m_Father: {fileID: 3395428544610208753}
   m_LocalEulerAnglesHint: {x: -3240, y: -94.021, z: 85.97}
+--- !u!95 &2580143501594150205
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2582472021051008240}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c369dfba2c6417e499f9090f30dd6c11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2782944547901432806
 GameObject:
   m_ObjectHideFlags: 0
@@ -5078,6 +5132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65e9d8fc75e0c9429b80cd9f6b6999c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
+  explosionPos: {fileID: 2006250744866040093}
+  instantiatePos: {fileID: 1672884178044511319}
+  yeetingCanon: {fileID: 2594524616501889061, guid: ffc41d7511a649547a07a01ca10e81d4, type: 3}
+  animators:
+  - {fileID: 1037889975433856195}
+  - {fileID: 2580143501594150205}
   keyToShootOn: 323
   hitableLayer:
     serializedVersion: 2
@@ -5089,7 +5149,7 @@ MonoBehaviour:
   - {fileID: 598642553065928916}
   - {fileID: 145011338354794994}
   damage: 1
-  rateOfFirePerSecond: 50
+  rateOfFirePerSecond: 1
   maxAccuracyMalus: 0
   maxSohtTakenIntoConsiderationForAccuracy: 50
 --- !u!1 &2839438621930038196
@@ -5123,6 +5183,8 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2006250744866040093}
+  - {fileID: 1672884178044511319}
   - {fileID: 6268305229295863637}
   - {fileID: 7444476300408417338}
   - {fileID: 5742507535727808592}
@@ -5182,6 +5244,37 @@ MonoBehaviour:
   groundCheck: {fileID: 1052832957152084572}
   groundDistance: 0.4
   orientation: {fileID: 5742507535727808592}
+--- !u!1 &3182940692791408358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2006250744866040093}
+  m_Layer: 0
+  m_Name: ExplosionOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2006250744866040093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3182940692791408358}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.68174297, y: -0, z: -0, w: 0.73159176}
+  m_LocalPosition: {x: -0.32499993, y: -0.488, z: -0.421}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6157261855421923295}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3195033783187238256
 GameObject:
   m_ObjectHideFlags: 0
@@ -15441,6 +15534,7 @@ GameObject:
   - component: {fileID: 7028539936454423492}
   - component: {fileID: 1778038028747261209}
   - component: {fileID: 2214521509167563412}
+  - component: {fileID: 1037889975433856195}
   m_Layer: 0
   m_Name: Scagazine
   m_TagString: Untagged
@@ -15462,7 +15556,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3395428544610208753}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -94.021, z: 162.065}
 --- !u!33 &1778038028747261209
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15519,6 +15613,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &1037889975433856195
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7486303265252722473}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3cc9e07cd2454b9498b786a5d4406dbe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7550483742626651118
 GameObject:
   m_ObjectHideFlags: 0

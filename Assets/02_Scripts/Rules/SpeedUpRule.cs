@@ -5,7 +5,7 @@ public class SpeedUpRule : RuleFunction
 {
     public override void Activate()
     {
-        Time.timeScale *= 1.5f;
+        Time.timeScale *= 1.3f;
     }
 
     public override void PlayerActivate(PlayerMovement player)
