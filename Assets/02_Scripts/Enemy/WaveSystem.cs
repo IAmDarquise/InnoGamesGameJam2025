@@ -11,6 +11,7 @@ public class WaveSystem : MonoBehaviour
     public delegate void WaveComplete(int wavesCompleted);
     public WaveComplete onWaveComplete;
     private static WaveSystem instance;
+    public int timeDelayBeforeSpawningStarts = 5000;
     public static WaveSystem Instance{ get { return instance; } }
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private int maxEnemiesAllowedSimultaneously = 20;
@@ -42,6 +43,7 @@ public class WaveSystem : MonoBehaviour
         enemyCount = waveTemplate.overallEnemyCountInWave * currentWave;
         enemiesLeftToSpawn = Mathf.Clamp(enemyCount,0,maxEnemiesAllowedSimultaneously);
         deadEnemies = 0;
+        PrepareEnemiesInstaniated();
         //PreapareEnemiesPooled();
         //SetTargetForAllEnemies(player.transform);
 
@@ -57,11 +59,9 @@ public class WaveSystem : MonoBehaviour
             Debug.Log("No Spawnpoints set");
             return;
         }
+        SpawnIntervalInstaniated();
 
-        for (int i = 0; i < enemiesLeftToSpawn; i++)
-        {
-            SpawnNewEnemieInstaniated();
-        }
+
     }
 
     private void SpawnNewEnemieInstaniated()
@@ -75,6 +75,7 @@ public class WaveSystem : MonoBehaviour
             currentEnemyPrefab = 0;
         }
         enemiesLeftToSpawn--;
+        SpawnIntervalInstaniated();
     }
 
     private void PreapareEnemiesPooled() 
@@ -129,13 +130,14 @@ public class WaveSystem : MonoBehaviour
         }
     }
 
-    public void EnemyDied(BaseEnemy enemy) 
+    public async void EnemyDied(BaseEnemy enemy) 
     {
         deadEnemies++;
-        deactivatedEnemies.Add(enemy);
+        //deactivatedEnemies.Add(enemy);
         if(deadEnemies >= enemyCount) 
         {
             onWaveComplete?.Invoke(currentWave);
+            await Task.Delay(timeDelayBeforeSpawningStarts);
             InitNewWave();
             return;
         }
@@ -145,11 +147,15 @@ public class WaveSystem : MonoBehaviour
 
     private async void SpawnIntervalInstaniated() 
     {
-        if (enemiesLeftToSpawn <= 0)
+        if (enemyCount-deadEnemies <= 0)
         {
             return;
         }
-        SpawnNewEnemieInstaniated();
+
+        if(enemiesLeftToSpawn > 0) 
+        {
+            SpawnNewEnemieInstaniated();
+        }
         await Task.Delay(Mathf.RoundToInt(waveTemplate.spawnInterval * 1000));
         SpawnIntervalInstaniated();
 

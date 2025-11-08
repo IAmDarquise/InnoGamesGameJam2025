@@ -41,6 +41,8 @@ public class BaseEnemy : MonoBehaviour, IHitable
         {
             WaveSystem.Instance.EnemyDied(this);
             isDead = true;
+            enabled = false;
+            transform.Rotate(new Vector3(0, 0, 90));
             //this.gameObject.SetActive(false);
         }
     }
