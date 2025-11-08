@@ -5149,7 +5149,7 @@ MonoBehaviour:
   - {fileID: 598642553065928916}
   - {fileID: 145011338354794994}
   damage: 1
-  rateOfFirePerSecond: 1
+  rateOfFirePerSecond: 3
   maxAccuracyMalus: 0
   maxSohtTakenIntoConsiderationForAccuracy: 50
 --- !u!1 &2839438621930038196
@@ -5163,6 +5163,7 @@ GameObject:
   - component: {fileID: 6157261855421923295}
   - component: {fileID: 7760277405740114542}
   - component: {fileID: 970820591213414616}
+  - component: {fileID: 7872221826052458823}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5200,7 +5201,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2839438621930038196}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -5231,11 +5232,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8659946b0ac3ecc49ad4de4061d033c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 7
+  moveSpeed: 12
   groundDrag: 5
-  jumpForce: 8
+  jumpForce: 14
   jumpCooldown: 0.25
-  airMultiplier: 0.4
+  airMultiplier: 0.7
   jumpKey: 32
   playerHeight: 2
   whatIsGround:
@@ -5244,6 +5245,20 @@ MonoBehaviour:
   groundCheck: {fileID: 1052832957152084572}
   groundDistance: 0.4
   orientation: {fileID: 5742507535727808592}
+--- !u!114 &7872221826052458823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2839438621930038196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a90e38605879046a26f90e5bb27014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHP: 100
+  currentHP: 100
 --- !u!1 &3182940692791408358
 GameObject:
   m_ObjectHideFlags: 0
@@ -15436,7 +15451,7 @@ Transform:
   m_GameObject: {fileID: 7239980024454807498}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.35355, y: -0.24749, z: -0.35355}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20606,7 +20621,8 @@ PrefabInstance:
       propertyPath: m_RenderPostProcessing
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8868601979599355123, guid: 69bed5978e0fe7b4398a06017510200e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6157998702281062899, guid: 69bed5978e0fe7b4398a06017510200e, type: 3}
@@ -20616,6 +20632,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7701447405937488612, guid: 69bed5978e0fe7b4398a06017510200e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4183136597993222490}
+    - targetCorrespondingSourceObject: {fileID: 7701447405937488612, guid: 69bed5978e0fe7b4398a06017510200e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5473510143383513511}
   m_SourcePrefab: {fileID: 100100000, guid: 69bed5978e0fe7b4398a06017510200e, type: 3}
 --- !u!1 &2108554386071582382 stripped
 GameObject:
@@ -20623,6 +20642,20 @@ GameObject:
   m_PrefabInstance: {fileID: 8620486268282897482}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4183136597993222490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108554386071582382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
+--- !u!114 &5473510143383513511
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
