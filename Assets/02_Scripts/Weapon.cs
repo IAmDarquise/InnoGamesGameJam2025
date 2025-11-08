@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Transform muzzlePosition;
     [SerializeField] List<ParticleSystem> impactVFXs;
     private int currentVFXID = 0;
-    public int damage;
+    public float damage;
     public float rateOfFirePerSecond;
     public float maxAccuracyMalus;
     public int maxSohtTakenIntoConsiderationForAccuracy = 50;

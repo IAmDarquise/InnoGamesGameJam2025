@@ -6,10 +6,17 @@ public class BaseEnemy : MonoBehaviour, IHitable
 {
     public float maxHp;
     private float currentHP;
+    public float speed;
     public NavMeshAgent agent;
     public Transform target;
     [SerializeField] private EnemyBehaviour behaviour;
     public Rigidbody rigid;
+    
+    public void SetTarget(Transform targetToHunt) 
+    {
+        target = targetToHunt;
+    }
+    
     public void SetBehaviour(EnemyBehaviour newBehaviour) 
     {
         behaviour = newBehaviour;
@@ -20,7 +27,7 @@ public class BaseEnemy : MonoBehaviour, IHitable
         behaviour.Move(this);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHP -= damage;
         if(currentHP <= 0) 
@@ -32,6 +39,6 @@ public class BaseEnemy : MonoBehaviour, IHitable
     private void OnEnable()
     {
         currentHP = maxHp;
-        behaviour.Move(this);
+        behaviour?.Move(this);
     }
 }

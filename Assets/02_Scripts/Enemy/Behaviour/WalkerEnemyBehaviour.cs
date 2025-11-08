@@ -7,7 +7,6 @@ using UnityEngine.AI;
 [System.Serializable]
 public class WalkerEnemyBehaviour : EnemyBehaviour
 {
-    [SerializeField] private float moveSpeed = 1000;
     [SerializeField] private float node_Completion_Radius = 0.5f;
     private bool canJump;
     List<Node> currentPath;
@@ -27,6 +26,7 @@ public class WalkerEnemyBehaviour : EnemyBehaviour
         agent.autoTraverseOffMeshLink = false;
         while (true)
         {
+            agent.speed = enemy.speed;
             agent.SetDestination(enemy.target.position);
             if (agent.isOnOffMeshLink)
             {
