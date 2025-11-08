@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class BaseEnemy : MonoBehaviour, IHitable
 {
+    [SerializeField] private MonoBehaviour enemyVis;
+    [SerializeField] private LayerMask propLayer;
+    [SerializeField] private Animator anim;
     public float maxHp;
     private float currentHP;
     public float speed;
@@ -23,7 +26,12 @@ public class BaseEnemy : MonoBehaviour, IHitable
     {
         target = targetToHunt;
     }
-    
+
+    private void Awake()
+    {
+        ResetValues();
+    }
+
     public void SetBehaviour(EnemyBehaviour newBehaviour) 
     {
         behaviour = newBehaviour;
@@ -39,10 +47,17 @@ public class BaseEnemy : MonoBehaviour, IHitable
         currentHP -= damage;
         if(currentHP <= 0) 
         {
-            WaveSystem.Instance.EnemyDied(this);
+            enemyVis.enabled = false;
+            WaveSystem.Instance?.EnemyDied(this);
             isDead = true;
-            enabled = false;
-            transform.Rotate(new Vector3(0, 0, 90));
+
+            gameObject.layer = LayerMask.NameToLayer("Props");
+            anim.speed = 0;
+            enemyVis.transform.LookAt(enemyVis.transform.position + new Vector3(0,1,0));
+           
+            enemyVis.transform.localPosition = new Vector3(0,-0.45f + Random.Range(0.0000001f, 1f),0);
+            Destroy(GetComponent<Rigidbody>());
+            Destroy(GetComponent<Collider>());
             //this.gameObject.SetActive(false);
         }
     }
