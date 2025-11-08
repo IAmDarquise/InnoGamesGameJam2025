@@ -47,7 +47,7 @@ public class BaseEnemy : MonoBehaviour, IHitable
         currentHP -= damage;
         if(currentHP <= 0) 
         {
-            enemyVis.enabled = false;
+            //enemyVis.enabled = false;
             WaveSystem.Instance?.EnemyDied(this);
             isDead = true;
             Destroy(gameObject);
