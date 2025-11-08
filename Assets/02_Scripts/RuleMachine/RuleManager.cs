@@ -15,6 +15,10 @@ public class RuleManager : MonoBehaviour
     private PlayerMovement playerMovement;
     private Weapon playerWeapon;
 
+    private Rule selectedRule1;
+    private Rule selectedRule2;
+    private Rule selectedRule3;
+
     void Start()
     {
         playerMovement = FindObjectOfType<PlayerMovement>();
@@ -24,9 +28,10 @@ public class RuleManager : MonoBehaviour
 
     public void SelectRule(int wavesCompleted)
     {
-        Rule selectedRule1 = new Rule(rules[Random.Range(0, rules.Count)]);
-        Rule selectedRule2 = new Rule(rules[Random.Range(0, rules.Count)]);
-        Rule selectedRule3 = new Rule(rules[Random.Range(0, rules.Count)]);
+        ResetRules();
+        selectedRule1 = new Rule(rules[Random.Range(0, rules.Count)]);
+        selectedRule2 = new Rule(rules[Random.Range(0, rules.Count)]);
+        selectedRule3 = new Rule(rules[Random.Range(0, rules.Count)]);
         UseRules(selectedRule1);
         UseRules(selectedRule2);
         UseRules(selectedRule3);
@@ -55,6 +60,65 @@ public class RuleManager : MonoBehaviour
         else if (rule._ruleInfo.target == RuleInfo.RuleTarget.Weapon)
         {
             rule.UseWeapon(playerWeapon);
+        }
+    }
+
+    private void ResetRules()
+    {
+        if (selectedRule1 != null)
+        {
+            if (selectedRule1._ruleInfo.target == RuleInfo.RuleTarget.Global)
+            {
+                selectedRule1.Deactivate();
+                selectedRule1 = null;
+            }
+            else if (selectedRule1._ruleInfo.target == RuleInfo.RuleTarget.Player)
+            {
+                selectedRule1.DeactivatePlayer(playerMovement);
+                selectedRule1 = null;
+            }
+            else if (selectedRule1._ruleInfo.target == RuleInfo.RuleTarget.Weapon)
+            {
+                selectedRule1.DeactivateWeapon(playerWeapon);
+                selectedRule1 = null;
+            }
+        }
+
+        if (selectedRule2 != null)
+        {
+            if (selectedRule2._ruleInfo.target == RuleInfo.RuleTarget.Global)
+            {
+                selectedRule2.Deactivate();
+                selectedRule2 = null;
+            }
+            else if (selectedRule2._ruleInfo.target == RuleInfo.RuleTarget.Player)
+            {
+                selectedRule2.DeactivatePlayer(playerMovement);
+                selectedRule2 = null;
+            }
+            else if (selectedRule2._ruleInfo.target == RuleInfo.RuleTarget.Weapon)
+            {
+                selectedRule2.DeactivateWeapon(playerWeapon);
+                selectedRule2 = null;
+            }
+        }
+        if (selectedRule3 != null)
+        {
+            if (selectedRule3._ruleInfo.target == RuleInfo.RuleTarget.Global)
+            {
+                selectedRule3.Deactivate();
+                selectedRule3 = null;
+            }
+            else if (selectedRule3._ruleInfo.target == RuleInfo.RuleTarget.Player)
+            {
+                selectedRule3.DeactivatePlayer(playerMovement);
+                selectedRule3 = null;
+            }
+            else if (selectedRule3._ruleInfo.target == RuleInfo.RuleTarget.Weapon)
+            {
+                selectedRule3.DeactivateWeapon(playerWeapon);
+                selectedRule3 = null;
+            }
         }
     }
 }
