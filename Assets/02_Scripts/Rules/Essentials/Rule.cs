@@ -15,4 +15,9 @@ public class Rule
     {
         _ruleFunc.Activate();
     }
+
+    public void Deactivate()
+    {
+        _ruleFunc.Deactivate();
+    }
 }
