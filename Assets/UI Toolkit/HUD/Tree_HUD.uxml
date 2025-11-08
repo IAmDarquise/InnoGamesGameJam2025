@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/HUD/Style_HUD.uss?fileID=7433441132597879392&amp;guid=01e6afd8561e36c41a29806345e47eed&amp;type=3#Style_HUD" />
+    <ui:VisualElement name="Parent" style="flex-grow: 1;">
+        <ui:VisualElement name="HealthBarParent" style="flex-grow: 1; width: 800px; min-width: 800px; max-width: 800px; height: 100px; min-height: 100px; max-height: 100px; align-self: center; border-left-color: rgb(177, 250, 255); border-right-color: rgb(177, 250, 255); border-top-color: rgb(177, 250, 255); border-bottom-color: rgb(177, 250, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px;">
+            <ui:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(62, 184, 185, 0.5); position: absolute; width: 800px; min-width: 800px; max-width: 800px; height: 100px; min-height: 100px; max-height: 100px;" />
+            <ui:ProgressBar value="22" name="HealthBar" style="height: 50px; min-height: 50px; max-height: 50px; width: 600px; min-width: 600px; max-width: 600px; align-self: center; position: absolute; top: 21px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
