@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
+    public int extraJumps;
+    private int extraJumpValue;
     bool readyToJump;
 
     [Header("Keybinds")]
@@ -30,20 +32,24 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
+        extraJumpValue = extraJumps;
     }
 
-    // Update is called once per frame
     void Update()
     {
         // ground check
-        grounded = grounded = Physics.CheckSphere(groundCheck.position, groundDistance, whatIsGround); 
+        grounded = grounded = Physics.CheckSphere(groundCheck.position, groundDistance, whatIsGround);
 
+        if (grounded)
+        {
+            ResetJump();
+        }
+        
         MyInput();
         SpeedControl();
 
@@ -68,14 +74,20 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         // when to jump
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKeyDown(jumpKey) && readyToJump)
         {
+            if (grounded)
+            {
+                Jump();
+                Invoke(nameof(ReadyJump), jumpCooldown);
+            }
+            else if (!grounded && extraJumpValue > 0)
+            {
+                Jump();
+                extraJumpValue--;
+                Invoke(nameof(ReadyJump), jumpCooldown);
+            }
 
-            // readyToJump was never set to true so jumping was never possible
-            readyToJump = false;
-            Jump();
-
-            Invoke(nameof(ResetJump), jumpCooldown);
         }
     }
 
@@ -111,13 +123,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        readyToJump = false;
         // reset y velocity
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
-    
+
     private void ResetJump()
+    {
+        extraJumpValue = extraJumps;
+        readyToJump = true;
+    }
+
+    private void ReadyJump()
     {
         readyToJump = true;
     }
