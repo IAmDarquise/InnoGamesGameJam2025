@@ -3,4 +3,62 @@
 
 .ruleMachine {
     background-color: rgba(53, 164, 150, 0.57);
+    visibility: hidden;
+}
+
+.hologram {
+    background-color: rgba(0, 200, 255, 0.1);
+    border-left-color: rgba(0, 255, 255, 0.5);
+    border-right-color: rgba(0, 255, 255, 0.5);
+    border-top-color: rgba(0, 255, 255, 0.3);
+    border-bottom-color: rgba(0, 255, 255, 0.3);
+    border-width: 1px;
+    border-radius: 6px;
+    border-style: solid;
+    color: rgba(180, 255, 255, 0.95);
+    -unity-text-outline-color: rgba(0, 255, 255, 0.6);
+    -unity-text-outline-width: 1;
+    -unity-text-shadow-color: rgba(0, 255, 255, 0.4);
+    -unity-text-shadow-offset: 0 1;
+    -unity-background-image-tint-color: rgba(0, 255, 255, 0.2);
+    background-image: none;
+    padding: 8px;
+    margin: 4px;
+}
+
+.hologram2 {
+    background-color: rgba(0, 200, 255, 0.1);
+    border-left-color: rgba(0, 255, 255, 0.5);
+    border-right-color: rgba(0, 255, 255, 0.5);
+    border-top-color: rgba(0, 255, 255, 0.3);
+    border-bottom-color: rgba(0, 255, 255, 0.3);
+    border-width: 1px;
+    border-radius: 6px;
+    border-style: solid;
+    color: rgba(180, 255, 255, 0.95);
+    -unity-text-outline-color: rgba(0, 255, 255, 0.6);
+    -unity-text-outline-width: 1;
+    -unity-text-shadow-color: rgba(0, 255, 255, 0.4);
+    -unity-text-shadow-offset: 0 1;
+    -unity-background-image-tint-color: rgba(0, 255, 255, 0.2);
+    background-image: none;
+    padding: 8px;
+    margin: 4px;
+}
+
+.hologram3 {
+    border-left-color: rgba(0, 255, 255, 0.5);
+    border-right-color: rgba(0, 255, 255, 0.5);
+    border-top-color: rgba(0, 255, 255, 0.3);
+    border-bottom-color: rgba(0, 255, 255, 0.3);
+    border-width: 1px;
+    border-radius: 6px;
+    border-style: solid;
+    color: rgba(180, 255, 255, 0.95);
+    -unity-text-outline-color: rgba(0, 255, 255, 0.6);
+    -unity-text-outline-width: 1;
+    -unity-text-shadow-color: rgba(0, 255, 255, 0.4);
+    -unity-text-shadow-offset: 0 1;
+    padding: 8px;
+    margin: 4px;
 }

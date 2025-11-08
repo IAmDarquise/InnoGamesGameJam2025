@@ -1,5 +1,7 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="Parent" style="flex-grow: 1;">
-        <ui:VisualElement style="flex-grow: 1; background-color: rgba(137, 0, 156, 0.76);" />
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(137, 0, 156, 0.76); justify-content: space-evenly;">
+            <ui:Label text="? ? ? ? ? " name="RuleName" style="-unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/07_Ressources/Hacked-KerX.ttf?fileID=12800000&amp;guid=9b7507104073d37468bd8ad832088743&amp;type=3#Hacked-KerX&quot;); font-size: 70px;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
