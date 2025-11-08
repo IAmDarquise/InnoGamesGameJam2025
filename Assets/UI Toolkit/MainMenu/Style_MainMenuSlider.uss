@@ -1,0 +1,98 @@
+:root {
+}
+
+.panel {
+    background-color: rgba(0, 255, 255, 0.37);
+    border-left-color: rgb(37, 221, 215);
+    border-right-color: rgb(37, 221, 215);
+    border-top-color: rgb(37, 221, 215);
+    border-bottom-color: rgb(37, 221, 215);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.slider {
+    -unity-font-definition: url("project://database/Assets/07_Ressources/Hacked-KerX.ttf?fileID=12800000&guid=9b7507104073d37468bd8ad832088743&type=3#Hacked-KerX");
+    font-size: 20px;
+    width: 400px;
+    min-width: 400px;
+    max-width: 400px;
+    padding-right: 25px;
+    padding-left: 85px;
+}
+
+#Parent > #MusicSlider > .unity-slider__label {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    -unity-text-align: upper-center;
+}
+
+#Parent > #SFXSlider > .unity-slider__label {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+    -unity-text-align: upper-center;
+}
+
+#Parent > #MusicSlider > .unity-slider__input > #unity-drag-container > #unity-tracker {
+    background-color: rgb(0, 255, 255);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+#Parent > #MusicSlider > .unity-slider__input > #unity-drag-container > #unity-dragger {
+    background-color: rgb(0, 255, 255);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-left-color: rgb(110, 161, 157);
+    border-right-color: rgb(110, 161, 157);
+    border-top-color: rgb(110, 161, 157);
+    border-bottom-color: rgb(110, 161, 157);
+}
+
+#Parent > #SFXSlider > .unity-slider__input > #unity-drag-container > #unity-tracker {
+    background-color: rgb(0, 255, 255);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+#Parent > #SFXSlider > .unity-slider__input > #unity-drag-container > #unity-dragger {
+    background-color: rgb(0, 255, 255);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-left-color: rgb(110, 161, 157);
+    border-right-color: rgb(110, 161, 157);
+    border-top-color: rgb(110, 161, 157);
+    border-bottom-color: rgb(110, 161, 157);
+}
+
+.label {
+    position: absolute;
+    -unity-font-definition: url("project://database/Assets/07_Ressources/Hacked-KerX.ttf?fileID=12800000&guid=9b7507104073d37468bd8ad832088743&type=3#Hacked-KerX");
+    font-size: 23px;
+    left: 17px;
+    top: 1px;
+}
