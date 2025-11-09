@@ -16132,8 +16132,8 @@ MonoBehaviour:
   currentMusicVolume: 0
   currentSFXVolume: 0
   startMasterVolume: 0.778
-  startMusicVolume: 0.2
-  startSFXVolume: 0.892
+  startMusicVolume: 0.3
+  startSFXVolume: 0.6
   _allSettings: {fileID: 11400000, guid: 4987120d5497dcc418234652fb553268, type: 2}
 --- !u!4 &684428691
 Transform:

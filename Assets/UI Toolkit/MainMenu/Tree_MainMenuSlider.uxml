@@ -2,8 +2,8 @@
     <Style src="project://database/Assets/UI%20Toolkit/MainMenu/Style_MainMenuSlider.uss?fileID=7433441132597879392&amp;guid=f4b6951f6d7504c4ba30dd265914d64c&amp;type=3#Style_MainMenuSlider" />
     <ui:VisualElement name="Parent" class="panel" style="flex-grow: 1; width: 400px; min-width: 400px; max-width: 400px; height: 80px; min-height: 80px; max-height: 80px; justify-content: space-evenly;">
         <ui:Label text="MUSIC" class="label" />
-        <ui:Slider value="0.2" high-value="1" name="MusicSlider" class="slider" />
-        <ui:Slider value="0.2" high-value="1" name="SFXSlider" class="slider" />
+        <ui:Slider value="0.3" high-value="1" name="MusicSlider" class="slider" />
+        <ui:Slider value="0.6" high-value="1" name="SFXSlider" class="slider" />
     </ui:VisualElement>
     <ui:Label text="SFX" class="label" style="top: 37px; left: 27px;" />
 </ui:UXML>
