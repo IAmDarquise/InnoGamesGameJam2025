@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] LayerMask hitableLayer;
     [SerializeField] Transform muzzlePosition;
     [SerializeField] List<ParticleSystem> impactVFXs;
+    [SerializeField] ParticleSystem hitmarker;
 
     [SerializeField] UIController_Skanone _skanone;
 
@@ -47,7 +48,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && Time.time - lastReload >=2)
         {
             lastReload = Time.time;
-            lastShot = Time.time+1.5f; // estimated time for the reload duration
+            lastShot = Time.time+0.25f; // estimated time for the reload duration
             Reload();
         }
         
@@ -86,7 +87,13 @@ public class Weapon : MonoBehaviour
             {
                 currentVFXID = 0;
             }
-            hitinfo.collider.GetComponent<IHitable>()?.TakeDamage(damage);
+            var hitable = hitinfo.collider.GetComponent<IHitable>();
+            if (hitable != null) 
+            {
+                hitmarker.transform.position = hitinfo.point;
+                hitmarker.Play();
+                hitable.TakeDamage(damage);
+            }
         }
     
     }
