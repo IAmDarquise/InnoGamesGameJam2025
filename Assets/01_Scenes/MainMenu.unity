@@ -6976,11 +6976,11 @@ MonoBehaviour:
     Path: event:/Music/white-bat-audio-continuum
   <holo_hit>k__BackingField:
     Guid:
-      Data1: -1283155975
-      Data2: 1171879147
-      Data3: 527571103
-      Data4: 773380255
-    Path: event:/SFX/Holo_hit
+      Data1: 589507335
+      Data2: 1094521120
+      Data3: -42756688
+      Data4: -327513830
+    Path: event:/SFX/Holo_hit_faster
   <movespeed_down>k__BackingField:
     Guid:
       Data1: 1199082531
@@ -16132,8 +16132,8 @@ MonoBehaviour:
   currentMusicVolume: 0
   currentSFXVolume: 0
   startMasterVolume: 0.778
-  startMusicVolume: 0.2
-  startSFXVolume: 0.892
+  startMusicVolume: 0.3
+  startSFXVolume: 0.6
   _allSettings: {fileID: 11400000, guid: 4987120d5497dcc418234652fb553268, type: 2}
 --- !u!4 &684428691
 Transform:

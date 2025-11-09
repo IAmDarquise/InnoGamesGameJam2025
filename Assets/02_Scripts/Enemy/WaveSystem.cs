@@ -22,11 +22,14 @@ public class WaveSystem : MonoBehaviour
     public float strengthMultiplierPerWave = 1f;
     private int deadEnemies;
     private int enemyCount;
-
+    public int healAmountonWaveFinish = 5;
     private int ableToSpawn;
     private uint score;
     public uint Score { get { return score; } }
     private int spawnedEnemies = 0;
+
+    [SerializeField] UIController_HUD _hud;
+
     private void Awake()
     {
         if(instance == null || instance == this)
@@ -43,7 +46,9 @@ public class WaveSystem : MonoBehaviour
 
     private void InitNewWave() 
     {
+        player.Heal(healAmountonWaveFinish);
         currentWave++;
+        _hud.DisplayWave(currentWave);
         spawnedEnemies = 0;
         enemyCount = waveTemplate.overallEnemyCountInWave * currentWave;
         ableToSpawn = maxEnemiesAllowedSimultaneously;
@@ -132,8 +137,9 @@ public class WaveSystem : MonoBehaviour
     {
         deadEnemies++;
         score += 10;
+        _hud.DisplayScore((int)score);
         //deactivatedEnemies.Add(enemy);
-        if(deadEnemies >= enemyCount) 
+        if (deadEnemies >= enemyCount) 
         {
             onWaveComplete?.Invoke(currentWave);
             await Task.Delay(timeDelayBeforeSpawningStarts);

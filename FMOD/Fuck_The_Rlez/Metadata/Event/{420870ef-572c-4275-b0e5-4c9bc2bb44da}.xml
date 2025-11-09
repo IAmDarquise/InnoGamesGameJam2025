@@ -139,7 +139,7 @@
 			<value>4.5999999</value>
 		</property>
 		<property name="minimumExtent">
-			<value>46</value>
+			<value>62</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{aa1007ec-bd79-41d7-9474-4752ad0985a5}" />

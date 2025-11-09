@@ -46,6 +46,7 @@ public class BaseEnemy : MonoBehaviour, IHitable
     public void TakeDamage(float damage)
     {
         currentHP -= damage;
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.holo_hit, transform.position);
         if(currentHP <= 0) 
         {
             enemyVis.enabled = false;
