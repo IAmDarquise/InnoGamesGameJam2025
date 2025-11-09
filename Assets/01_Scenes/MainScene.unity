@@ -4818,6 +4818,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4845772926292057517, guid: 059795e2eea8f484da8f8550f6838691, type: 3}
+      propertyPath: isActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4845772926292057517, guid: 059795e2eea8f484da8f8550f6838691, type: 3}
+      propertyPath: ruleManager
+      value: 
+      objectReference: {fileID: 2211516578990380334}
     - target: {fileID: 7371540425718008307, guid: 059795e2eea8f484da8f8550f6838691, type: 3}
       propertyPath: m_Name
       value: RuleMachine
@@ -36078,6 +36086,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4845772926292057517, guid: 059795e2eea8f484da8f8550f6838691, type: 3}
+      propertyPath: ruleManager
+      value: 
+      objectReference: {fileID: 2211516578990380334}
     - target: {fileID: 7371540425718008307, guid: 059795e2eea8f484da8f8550f6838691, type: 3}
       propertyPath: m_Name
       value: RuleMachine (1)
@@ -121960,19 +121972,22 @@ PrefabInstance:
       propertyPath: ruleMachine2
       value: 
       objectReference: {fileID: 633286754}
-    - target: {fileID: 7124005472980084364, guid: 35ac2602d663d1342a5b136c98ad0439, type: 3}
-      propertyPath: rules.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7124005472980084364, guid: 35ac2602d663d1342a5b136c98ad0439, type: 3}
-      propertyPath: 'rules.Array.data[10]'
-      value: 
-      objectReference: {fileID: 11400000, guid: ae14cf3c89301154d894377ec9a912de, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35ac2602d663d1342a5b136c98ad0439, type: 3}
+--- !u!114 &2211516578990380334 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7124005472980084364, guid: 35ac2602d663d1342a5b136c98ad0439, type: 3}
+  m_PrefabInstance: {fileID: 2211516578990380333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cce8371a612e940945417a781ec24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RuleManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

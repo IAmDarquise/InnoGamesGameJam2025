@@ -12,31 +12,8 @@ public class RuleMachine : MonoBehaviour
     [SerializeField] public List<RuleInfo> _allRulez = new List<RuleInfo>();
 
 
-
-
-    //private void Start()
-    //{
-    //    SpinTheMachine();
-    //}
-
-    private void Update()
-    {
-
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            Debug.Log("K pressed");
-            SpinTheMachine();
-        }
-
-
-        
-    }
-
-
     public async void SpinTheMachine()
     {
-
-
         slot1.Spin(_allRulez[0]);
         await Task.Delay(2);
 
@@ -45,11 +22,5 @@ public class RuleMachine : MonoBehaviour
 
         slot3.Spin(_allRulez[2]);
         await Task.Delay(2);
-
-
-
     }
-
-
-   
 }
