@@ -24,8 +24,8 @@ public class WaveSystem : MonoBehaviour
     private int enemyCount;
 
     private int ableToSpawn;
-
-
+    private uint score;
+    public uint Score { get { return score; } }
     private int spawnedEnemies = 0;
     private void Awake()
     {
@@ -131,6 +131,7 @@ public class WaveSystem : MonoBehaviour
     public async void EnemyDied(BaseEnemy enemy) 
     {
         deadEnemies++;
+        score += 10;
         //deactivatedEnemies.Add(enemy);
         if(deadEnemies >= enemyCount) 
         {

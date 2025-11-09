@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
         IFrames();
         if (currentHP <= 0) 
         {
+            SceneManager.LoadScene(0);
             //DEAD
         }
     }
@@ -43,6 +45,10 @@ public class PlayerHealth : MonoBehaviour
 
     private async void IFrames() 
     {
+        if(this == null) 
+        {
+            return ;
+        }
         await Task.Delay(IMs);
         canTakeDamage = true;
     }

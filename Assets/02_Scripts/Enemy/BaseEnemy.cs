@@ -51,14 +51,15 @@ public class BaseEnemy : MonoBehaviour, IHitable
             enemyVis.enabled = false;
             WaveSystem.Instance?.EnemyDied(this);
             isDead = true;
-            Destroy(gameObject);
+            //Destroy(gameObject);
             gameObject.layer = LayerMask.NameToLayer("Props");
             anim.speed = 0;
             enemyVis.transform.LookAt(enemyVis.transform.position + new Vector3(0, 1, 0));
 
-            enemyVis.transform.localPosition = new Vector3(0, -0.45f + Random.Range(0.0000001f, 1f), 0);
+            enemyVis.transform.localPosition = new Vector3(0, -0.5f + Random.Range(0.0000001f, 0.1f), 0);
             Destroy(GetComponent<Rigidbody>());
             Destroy(GetComponent<Collider>());
+            agent.enabled = false;
         }
     }
 
@@ -73,7 +74,7 @@ public class BaseEnemy : MonoBehaviour, IHitable
 
     private async void Attack() 
     {
-        if(this == null) 
+        if(isDead) 
         {
             return;
         }
