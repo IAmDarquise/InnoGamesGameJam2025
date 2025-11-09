@@ -6,6 +6,8 @@ public class SpeedUpRule : RuleFunction
     public override void Activate()
     {
         Time.timeScale *= 1.3f;
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.everything_faster, soundPoint.transform.position);
     }
 
     public override void PlayerActivate(PlayerMovement player)

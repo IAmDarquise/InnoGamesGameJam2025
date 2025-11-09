@@ -11,6 +11,8 @@ public class JumpHeightUpRule : RuleFunction
     public override void PlayerActivate(PlayerMovement player)
     {
         player.jumpForce *= 1.4f;
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.jumpheight_up, soundPoint.transform.position);
     }
 
     public override void WeaponActivate(Weapon weapon)

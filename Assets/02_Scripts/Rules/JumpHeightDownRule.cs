@@ -11,6 +11,8 @@ public class JumpHeightDownRule : RuleFunction
     public override void PlayerActivate(PlayerMovement player)
     {
         player.jumpForce *= 0.8f;
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.jumpheight_down, soundPoint.transform.position);
     }
 
     public override void WeaponActivate(Weapon weapon)

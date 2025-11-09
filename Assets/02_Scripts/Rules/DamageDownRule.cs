@@ -15,6 +15,8 @@ public class DamageDownRule : RuleFunction
 
     public override void WeaponActivate(Weapon weapon)
     {
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.damage_down, soundPoint.transform.position);
         weapon.damage *= 0.8f;
     }
 

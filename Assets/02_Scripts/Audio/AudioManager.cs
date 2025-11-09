@@ -122,7 +122,8 @@ public class AudioManager : MonoBehaviour
 
     public void Play3DOneShot(EventReference sound, Vector3 pos)
     {
-            RuntimeManager.PlayOneShot(sound, pos);
+        Debug.Log(sound);
+        RuntimeManager.PlayOneShot(sound, pos);
     }
 
     public void Play2DOneShot(EventReference sound)
