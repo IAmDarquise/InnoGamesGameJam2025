@@ -26,6 +26,11 @@ public class Rule
         _ruleFunc.WeaponActivate(weapon);
     }
 
+    public void UseEnemy(BaseEnemy enemy)
+    {
+        _ruleFunc.EnemyActivate(enemy);
+    }
+
     public void Deactivate()
     {
         _ruleFunc.Deactivate();
@@ -39,5 +44,10 @@ public class Rule
     public void DeactivateWeapon(Weapon weapon)
     {
         _ruleFunc.WeaponDeactivate(weapon);
+    }
+
+    public void DeactivateEnemy(BaseEnemy enemy)
+    {
+        _ruleFunc.EnemyDeactivate(enemy);
     }
 }
