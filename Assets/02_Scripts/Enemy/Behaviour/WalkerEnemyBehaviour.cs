@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,10 +13,6 @@ public class WalkerEnemyBehaviour : EnemyBehaviour
     public override void Move(BaseEnemy enemy)
     {
         enemy.StartCoroutine(Start(enemy));
-    }
-    private bool DeterminIfCanJump()
-    {
-        return false;
     }
 
     IEnumerator Start(BaseEnemy enemy)

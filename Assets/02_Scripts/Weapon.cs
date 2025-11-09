@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] private Transform rayCastOrigin;
     [SerializeField] private Transform explosionPos;
     [SerializeField] private Transform instantiatePos;
     [SerializeField] private Rigidbody yeetingCanon;
@@ -25,6 +26,7 @@ public class Weapon : MonoBehaviour
     private float lastShot = float.MinValue;
     int x;
     int y;
+    Ray currentRay;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,7 +47,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && Time.time - lastReload >=2)
         {
             lastReload = Time.time;
-            lastShot = Time.time+2;
+            lastShot = Time.time+1.5f; // estimated time for the reload duration
             Reload();
         }
         
@@ -72,8 +74,9 @@ public class Weapon : MonoBehaviour
     public void Shoot() 
     {
         Vector3 dir = Camera.main.ScreenToWorldPoint(new Vector3(x,y,100))- Camera.main.ScreenToWorldPoint(new Vector3(x, y, 1));
-        Ray gunLine = new Ray(muzzlePosition.position, dir);
-        if (Physics.Raycast(Camera.main.ScreenToWorldPoint(new Vector3(x, y, 1)),dir.normalized, out RaycastHit hitinfo, 30, hitableLayer)) 
+        Ray gunLine = new Ray(rayCastOrigin.position, dir);
+        currentRay = gunLine;
+        if (Physics.Raycast(gunLine, out RaycastHit hitinfo, 30, hitableLayer)) 
         {
 
             impactVFXs[currentVFXID].transform.position = hitinfo.point;
@@ -86,5 +89,10 @@ public class Weapon : MonoBehaviour
             hitinfo.collider.GetComponent<IHitable>()?.TakeDamage(damage);
         }
     
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(currentRay);
     }
 }
