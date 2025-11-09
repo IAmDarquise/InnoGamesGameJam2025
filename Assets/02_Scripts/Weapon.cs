@@ -12,6 +12,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] Transform muzzlePosition;
     [SerializeField] List<ParticleSystem> impactVFXs;
 
+    [SerializeField] UIController_Skanone _skanone;
+
     private float lastReload = float.MinValue;
     private int currentVFXID = 0;
     public float damage;
@@ -37,6 +39,7 @@ public class Weapon : MonoBehaviour
         {
             lastShot = Time.time;
             currentBulletCount++;
+            _skanone.DisplayAmmo(currentBulletCount);
             Shoot();
         }
         if (Input.GetKeyDown(KeyCode.R) && Time.time - lastReload >=2)
@@ -57,6 +60,7 @@ public class Weapon : MonoBehaviour
             animator.SetTrigger("Reload");
         }
         Rigidbody tmpRB = Instantiate(yeetingCanon);
+        _skanone.DisplayAmmo(currentBulletCount);
         
         tmpRB.gameObject.transform.position = instantiatePos.position;
         tmpRB.gameObject.transform.rotation = transform.rotation;
