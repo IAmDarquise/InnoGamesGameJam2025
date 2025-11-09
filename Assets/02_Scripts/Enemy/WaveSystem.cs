@@ -47,7 +47,7 @@ public class WaveSystem : MonoBehaviour
 
     private void InitNewWave() 
     {
-        player.Heal(healAmountonWaveFinish);
+        player.Heal(20);
         currentWave++;
         _hud.DisplayWave(currentWave);
         spawnedEnemies = 0;
