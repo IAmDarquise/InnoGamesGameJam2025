@@ -58,8 +58,10 @@ public class BaseEnemy : MonoBehaviour, IHitable
             enemyVis.transform.LookAt(enemyVis.transform.position + new Vector3(0, 1, 0));
 
             enemyVis.transform.localPosition = new Vector3(0, -0.5f + Random.Range(0.0000001f, 0.1f), 0);
-            Destroy(GetComponent<Rigidbody>());
-            Destroy(GetComponent<Collider>());
+            enemyVis.transform.parent = null;
+            Destroy(gameObject);
+            //Destroy(GetComponent<Rigidbody>());
+            //Destroy(GetComponent<Collider>());
             agent.enabled = false;
         }
     }
@@ -75,7 +77,7 @@ public class BaseEnemy : MonoBehaviour, IHitable
 
     private async void Attack() 
     {
-        if(isDead) 
+        if(this== null || isDead) 
         {
             return;
         }
