@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class DamageUpRule : RuleFunction
+public class StrongerEnemyRule : RuleFunction
 {
     public override void Activate()
     {
@@ -15,14 +15,12 @@ public class DamageUpRule : RuleFunction
 
     public override void WeaponActivate(Weapon weapon)
     {
-        weapon.damage *= 2f;
-        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
-        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.damage_up, soundPoint.transform.position);
+        return;
     }
 
     public override void EnemyActivate(BaseEnemy enemy)
     {
-        return;
+        enemy.damage += 4f;
     }
 
     public override void Deactivate()
@@ -37,11 +35,11 @@ public class DamageUpRule : RuleFunction
 
     public override void WeaponDeactivate(Weapon weapon)
     {
-        weapon.damage = 4f;
+        return;
     }
-
+    
     public override void EnemyDeactivate(BaseEnemy enemy)
     {
-        return;
+        enemy.damage -= 4f;
     }
 }

@@ -8,7 +8,7 @@ public abstract class RuleFunction
     // Player
     public abstract void PlayerActivate(PlayerMovement player);
     // Enemy
-    // public abstract void EnemyActivate(whatever I need here lol);
+    public abstract void EnemyActivate(BaseEnemy enemy);
     // Weapon
     public abstract void WeaponActivate(Weapon weapon);
 
@@ -17,7 +17,7 @@ public abstract class RuleFunction
     // Player
     public abstract void PlayerDeactivate(PlayerMovement player);
     // Enemy
-    // public abstract void EnemyDeactivate(whatever I need here lol);
+    public abstract void EnemyDeactivate(BaseEnemy enemy);
     // Weapon
     public abstract void WeaponDeactivate(Weapon weapon);
 }

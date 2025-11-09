@@ -35687,6 +35687,7 @@ MonoBehaviour:
   - {fileID: 2060466829}
   maxEnemiesAllowedSimultaneously: 20
   strengthMultiplierPerWave: 1
+  healAmountonWaveFinish: 5
   _hud: {fileID: 1833773298}
 --- !u!4 &612146931
 Transform:

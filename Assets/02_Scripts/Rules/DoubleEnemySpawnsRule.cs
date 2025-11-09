@@ -1,11 +1,11 @@
 using UnityEngine;
 
 [System.Serializable]
-public class DamageUpRule : RuleFunction
+public class DoubleEnemySpawnsRule : RuleFunction
 {
     public override void Activate()
     {
-        return;
+        WaveSystem.Instance.strengthMultiplierPerWave *= 2;
     }
 
     public override void PlayerActivate(PlayerMovement player)
@@ -15,9 +15,7 @@ public class DamageUpRule : RuleFunction
 
     public override void WeaponActivate(Weapon weapon)
     {
-        weapon.damage *= 2f;
-        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
-        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.damage_up, soundPoint.transform.position);
+        return;
     }
 
     public override void EnemyActivate(BaseEnemy enemy)
@@ -27,7 +25,7 @@ public class DamageUpRule : RuleFunction
 
     public override void Deactivate()
     {
-        return;
+        WaveSystem.Instance.strengthMultiplierPerWave = 1f;
     }
 
     public override void PlayerDeactivate(PlayerMovement player)
@@ -37,9 +35,9 @@ public class DamageUpRule : RuleFunction
 
     public override void WeaponDeactivate(Weapon weapon)
     {
-        weapon.damage = 4f;
+        return;
     }
-
+    
     public override void EnemyDeactivate(BaseEnemy enemy)
     {
         return;

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c2a2c0ee5ddeec4b9662b1aa862d1c3, type: 3}
-  m_Name: SpeedUpRule
+  m_Name: DoubleEnemies
   m_EditorClassIdentifier: Assembly-CSharp::RuleInfo
-  ruleName: Game Speed Up
+  ruleName: Double Enemy Spawns
   target: 2
   function:
-    rid: 6775939608369168449
+    rid: 6775939634635735040
   references:
     version: 2
     RefIds:
-    - rid: 6775939608369168449
-      type: {class: SpeedUpRule, ns: , asm: Assembly-CSharp}
+    - rid: 6775939634635735040
+      type: {class: DoubleEnemySpawnsRule, ns: , asm: Assembly-CSharp}
       data: 
