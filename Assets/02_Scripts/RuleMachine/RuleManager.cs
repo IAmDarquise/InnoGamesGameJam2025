@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 
 /// <summary>
@@ -26,25 +27,28 @@ public class RuleManager : MonoBehaviour
         WaveSystem.Instance.onWaveComplete += SelectRule;
     }
 
-    public void SelectRule(int wavesCompleted)
+    public async void SelectRule(int wavesCompleted)
     {
         ResetRules();
         selectedRule1 = new Rule(rules[Random.Range(0, rules.Count)]);
         selectedRule2 = new Rule(rules[Random.Range(0, rules.Count)]);
         selectedRule3 = new Rule(rules[Random.Range(0, rules.Count)]);
-        UseRules(selectedRule1);
-        UseRules(selectedRule2);
-        UseRules(selectedRule3);
         ruleMachine1._allRulez.Clear();
         ruleMachine2._allRulez.Clear();
         ruleMachine1._allRulez.Add(selectedRule1._ruleInfo);
-        ruleMachine1._allRulez.Add(selectedRule2._ruleInfo);
-        ruleMachine1._allRulez.Add(selectedRule3._ruleInfo);
         ruleMachine2._allRulez.Add(selectedRule1._ruleInfo);
+        ruleMachine1._allRulez.Add(selectedRule2._ruleInfo);
         ruleMachine2._allRulez.Add(selectedRule2._ruleInfo);
+        ruleMachine1._allRulez.Add(selectedRule3._ruleInfo);
         ruleMachine2._allRulez.Add(selectedRule3._ruleInfo);
         ruleMachine1.SpinTheMachine();
         ruleMachine2.SpinTheMachine();
+        await Task.Delay(3000);
+        UseRules(selectedRule1);
+        await Task.Delay(3000);
+        UseRules(selectedRule2);
+        await Task.Delay(3000);
+        UseRules(selectedRule3);
     }
 
     public void UseRules(Rule rule)
