@@ -5232,14 +5232,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8659946b0ac3ecc49ad4de4061d033c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 12
+  moveSpeed: 10
   groundDrag: 5
   jumpForce: 14
   jumpCooldown: 0.25
-  airMultiplier: 0.7
+  airMultiplier: 0.6
   extraJumps: 1
   jumpKey: 32
-  playerHeight: 2
+  playerHeight: 1.8
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
@@ -5258,6 +5258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a90e38605879046a26f90e5bb27014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  _hud: {fileID: 0}
   maxHP: 100
   currentHP: 100
 --- !u!1 &3182940692791408358
