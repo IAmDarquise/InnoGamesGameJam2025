@@ -7058,6 +7058,13 @@ MonoBehaviour:
       Data3: -10909018
       Data4: -1866745280
     Path: event:/SFX/BarSeb
+  <laserpew>k__BackingField:
+    Guid:
+      Data1: -1946203162
+      Data2: 1320276438
+      Data3: -2117957462
+      Data4: 452352527
+    Path: event:/SFX/LazerPew
 --- !u!43 &467358429
 Mesh:
   m_ObjectHideFlags: 0
