@@ -18,3 +18,40 @@
 #Parent > #HealthBarParent > #HealthBar > #unity-progress-bar > .unity-progress-bar__background > .unity-progress-bar__progress {
     background-color: rgb(255, 71, 80);
 }
+
+.scoreBox {
+    width: 300px;
+    height: 100px;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 100px;
+    max-height: 100px;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.labelText {
+    -unity-font-definition: url("project://database/Assets/07_Ressources/Hacked-KerX.ttf?fileID=12800000&guid=9b7507104073d37468bd8ad832088743&type=3#Hacked-KerX");
+    font-size: 40px;
+    top: 20px;
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    left: 11px;
+}
+
+.labelAmount {
+    font-size: 40px;
+    -unity-font-definition: url("project://database/Assets/07_Ressources/Hacked-KerX.ttf?fileID=12800000&guid=9b7507104073d37468bd8ad832088743&type=3#Hacked-KerX");
+    top: 20px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    -unity-text-align: upper-center;
+}
