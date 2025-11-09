@@ -1,0 +1,34 @@
+:root {
+}
+
+.button {
+    width: 400px;
+    min-width: 400px;
+    max-width: 400px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    background-color: rgba(0, 255, 255, 0.37);
+    border-left-color: rgb(37, 221, 215);
+    border-right-color: rgb(37, 221, 215);
+    border-top-color: rgb(37, 221, 215);
+    border-bottom-color: rgb(37, 221, 215);
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    justify-content: space-evenly;
+    -unity-font-definition: url("project://database/Assets/07_Ressources/Hacked-KerX.ttf?fileID=12800000&guid=9b7507104073d37468bd8ad832088743&type=3#Hacked-KerX");
+    -unity-text-align: upper-center;
+    font-size: 45px;
+}
+
+.button:hover {
+    scale: 1.1 1.1 1.1;
+    transition-duration: 0.1s;
+    background-color: rgba(22, 135, 135, 0.46);
+}

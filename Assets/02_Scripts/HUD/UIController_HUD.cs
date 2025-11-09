@@ -39,4 +39,16 @@ public class UIController_HUD : MonoBehaviour
     {
         _labelWave.text = wave.ToString();
     }
+
+    public void DisplayHUD(bool state)
+    {
+        if(state)
+        {
+            _root.style.visibility = Visibility.Visible;
+        }
+        else
+        {
+            _root.style.visibility = Visibility.Hidden;
+        }
+    }
 }
