@@ -10054,7 +10054,7 @@ MonoBehaviour:
   - {fileID: 598642553065928916}
   - {fileID: 598642553065928916}
   - {fileID: 145011338354794994}
-  hitmarker: {fileID: 0}
+  hitmarker: {fileID: 3542639279521494290}
   _skanone: {fileID: 5222788691371528836}
   damage: 4
   rateOfFirePerSecond: 1
