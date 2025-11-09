@@ -563,6 +563,78 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 145011338354794994, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.84155536
+      objectReference: {fileID: 0}
+    - target: {fileID: 145011338354794994, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 145011338354794994, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 145011338354794994, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 145011338354794994, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.020024916
+      objectReference: {fileID: 0}
+    - target: {fileID: 145011338354794994, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.6247524
+      objectReference: {fileID: 0}
+    - target: {fileID: 527441216112121075, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.84155536
+      objectReference: {fileID: 0}
+    - target: {fileID: 527441216112121075, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 527441216112121075, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 527441216112121075, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 527441216112121075, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.020024916
+      objectReference: {fileID: 0}
+    - target: {fileID: 527441216112121075, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.6247524
+      objectReference: {fileID: 0}
+    - target: {fileID: 598642553065928916, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.84155536
+      objectReference: {fileID: 0}
+    - target: {fileID: 598642553065928916, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 598642553065928916, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 598642553065928916, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 598642553065928916, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.020024916
+      objectReference: {fileID: 0}
+    - target: {fileID: 598642553065928916, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.6247524
+      objectReference: {fileID: 0}
     - target: {fileID: 2839438621930038196, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
       propertyPath: m_Name
       value: Player
@@ -643,13 +715,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 162.065
       objectReference: {fileID: 0}
+    - target: {fileID: 7482790731831857458, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.84155536
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482790731831857458, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482790731831857458, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482790731831857458, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482790731831857458, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.020024916
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482790731831857458, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.6247524
+      objectReference: {fileID: 0}
     - target: {fileID: 7760277405740114542, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3395428544610208753, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1477225864}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7486303265252722473, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
       insertIndex: -1
@@ -715,6 +814,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1391503136 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3395428544610208753, guid: 6b98002173cc9e44ab71377b73b4c0e6, type: 3}
+  m_PrefabInstance: {fileID: 1391503131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1397159949
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +942,7 @@ GameObject:
   - component: {fileID: 1477225863}
   - component: {fileID: 1477225862}
   m_Layer: 0
-  m_Name: Hitmarker
+  m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1178,7 +1282,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 0.4
       minScalar: 0.2
       maxCurve:
         serializedVersion: 2
@@ -1231,7 +1335,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 0.4
       minScalar: 0.2
       maxCurve:
         serializedVersion: 2
@@ -1443,8 +1547,8 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -1.5707963
-      minScalar: 1.5707963
+      scalar: -3.1415925
+      minScalar: 3.1415925
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1871,7 +1975,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 3
+        scalar: 2
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5723,11 +5827,11 @@ Transform:
   m_GameObject: {fileID: 1477225861}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.32647, y: 0.45, z: -8.14965}
+  m_LocalPosition: {x: -0.202, y: 0.64, z: -0.215}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1391503136}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1610026577
 GameObject:
@@ -6320,4 +6424,3 @@ SceneRoots:
   - {fileID: 1610026579}
   - {fileID: 1391503131}
   - {fileID: 1887742144}
-  - {fileID: 1477225864}

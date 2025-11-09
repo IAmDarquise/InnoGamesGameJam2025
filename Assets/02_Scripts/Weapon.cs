@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Transform muzzlePosition;
     [SerializeField] List<ParticleSystem> impactVFXs;
     [SerializeField] ParticleSystem hitmarker;
+    [SerializeField] ParticleSystem muzzleFlash;
 
     [SerializeField] UIController_Skanone _skanone;
 
@@ -74,6 +75,7 @@ public class Weapon : MonoBehaviour
 
     public void Shoot() 
     {
+        muzzleFlash.Play();
         Vector3 dir = Camera.main.ScreenToWorldPoint(new Vector3(x,y,100))- Camera.main.ScreenToWorldPoint(new Vector3(x, y, 1));
         Ray gunLine = new Ray(rayCastOrigin.position, dir);
         currentRay = gunLine;
