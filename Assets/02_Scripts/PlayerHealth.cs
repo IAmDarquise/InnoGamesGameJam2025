@@ -23,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
         if (currentHP <= 0) 
         {
             SceneManager.LoadScene(0);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
             //DEAD
         }
     }

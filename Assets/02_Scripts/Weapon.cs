@@ -48,7 +48,7 @@ public class Weapon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && Time.time - lastReload >=2)
         {
             lastReload = Time.time;
-            lastShot = Time.time+1.5f; // estimated time for the reload duration
+            lastShot = Time.time+0.25f; // estimated time for the reload duration
             Reload();
         }
         
