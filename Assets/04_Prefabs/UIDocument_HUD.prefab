@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4129515899557862402}
   - component: {fileID: 6121208578720373017}
+  - component: {fileID: 326986524487656583}
   m_Layer: 5
   m_Name: UIDocument_HUD
   m_TagString: Untagged
@@ -55,3 +56,16 @@ MonoBehaviour:
   m_PivotReferenceSize: 0
   m_Pivot: 0
   m_WorldSpaceCollider: {fileID: 0}
+--- !u!114 &326986524487656583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7803869031694643824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceef0d9b7ba7d224cabbcf42d5a75348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIController_HUD
+  _uiDoc: {fileID: 6121208578720373017}
