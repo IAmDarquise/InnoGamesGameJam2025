@@ -6,6 +6,8 @@ public class GravityRule : RuleFunction
     public override void Activate()
     {
         Physics.gravity += new Vector3(0, 3f, 0);
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.moon_gravity, soundPoint.transform.position);
     }
 
     public override void PlayerActivate(PlayerMovement player)
@@ -21,6 +23,7 @@ public class GravityRule : RuleFunction
     public override void Deactivate()
     {
         Physics.gravity = new Vector3(0, -9.81f, 0);
+
     }
 
     public override void PlayerDeactivate(PlayerMovement player)

@@ -13,6 +13,8 @@ public class MoveSpeedDownRule : RuleFunction
     {
         speed = player.moveSpeed;
         player.moveSpeed *= 0.8f;
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.movespeed_down, soundPoint.transform.position);
     }
 
     public override void WeaponActivate(Weapon weapon)

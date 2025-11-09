@@ -18,6 +18,8 @@ public class FireRateDownRule : RuleFunction
     {
         fireRate = weapon.rateOfFirePerSecond;
         weapon.rateOfFirePerSecond *= 0.7f;
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.firerate_down, soundPoint.transform.position);
     }
 
     public override void Deactivate()
