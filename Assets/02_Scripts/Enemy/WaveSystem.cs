@@ -11,11 +11,12 @@ public class WaveSystem : MonoBehaviour
     public delegate void WaveComplete(int wavesCompleted);
     public WaveComplete onWaveComplete;
     private static WaveSystem instance;
-    public int timeDelayBeforeSpawningStarts = 5000;
+    public int timeDelayBeforeSpawningStarts = 10000;
     public static WaveSystem Instance{ get { return instance; } }
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private int maxEnemiesAllowedSimultaneously = 20;
     private List<BaseEnemy> deactivatedEnemies = new List<BaseEnemy>();
+    public List<Rule> enemyRules = new List<Rule>();
 
     private List<BaseEnemy> pooledEnemies = new List<BaseEnemy>();
     private int currentEnemyPrefab = 0;
@@ -50,7 +51,7 @@ public class WaveSystem : MonoBehaviour
         currentWave++;
         _hud.DisplayWave(currentWave);
         spawnedEnemies = 0;
-        enemyCount = waveTemplate.overallEnemyCountInWave * currentWave;
+        enemyCount = waveTemplate.overallEnemyCountInWave * Mathf.RoundToInt(currentWave*strengthMultiplierPerWave);
         ableToSpawn = maxEnemiesAllowedSimultaneously;
         deadEnemies = 0;
         PrepareEnemiesInstaniated();
@@ -88,7 +89,13 @@ public class WaveSystem : MonoBehaviour
         }
         ableToSpawn--;
         spawnedEnemies++;
-        SpawnIntervalInstaniated();
+        foreach (var rule in enemyRules) 
+        {
+            rule.UseEnemy(tmpEnemy);
+        }
+        tmpEnemy.ResetValues();
+
+        //SpawnIntervalInstaniated();
     }
 
     private void PreapareEnemiesPooled() 
