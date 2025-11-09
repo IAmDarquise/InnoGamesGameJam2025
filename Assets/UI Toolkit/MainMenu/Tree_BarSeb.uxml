@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenu/Style_BarSeb.uss?fileID=7433441132597879392&amp;guid=b5fda1a10544b2f4bb085fb3b7540bde&amp;type=3#Style_BarSeb" />
+    <ui:VisualElement name="Parent" class="seb" style="background-image: url(&quot;project://database/Assets/03_Art/BarkeeperSeb.png?fileID=2800000&amp;guid=e6a5a5f96cd43794e9a114856ad0d18c&amp;type=3#BarkeeperSeb&quot;); width: 524px; min-width: 524px; max-width: 524px; height: 1048px; min-height: 1048px; max-height: 1048px; transition-duration: 0.1s;" />
+</ui:UXML>
