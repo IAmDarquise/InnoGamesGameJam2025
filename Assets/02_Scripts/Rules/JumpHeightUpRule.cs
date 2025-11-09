@@ -3,7 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public class JumpHeightUpRule : RuleFunction
 {
-    float jumpHeight;
     public override void Activate()
     {
         return;
@@ -11,8 +10,7 @@ public class JumpHeightUpRule : RuleFunction
 
     public override void PlayerActivate(PlayerMovement player)
     {
-        jumpHeight = player.jumpForce;
-        player.jumpForce *= 1.2f;
+        player.jumpForce *= 1.4f;
         GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
         AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.jumpheight_up, soundPoint.transform.position);
     }
@@ -29,7 +27,7 @@ public class JumpHeightUpRule : RuleFunction
 
     public override void PlayerDeactivate(PlayerMovement player)
     {
-        player.jumpForce = jumpHeight;
+        player.jumpForce = 14f;
     }
 
     public override void WeaponDeactivate(Weapon weapon)

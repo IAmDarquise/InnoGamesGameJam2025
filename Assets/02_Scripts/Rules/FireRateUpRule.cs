@@ -3,7 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public class FireRateUpRule : RuleFunction
 {
-    float fireRate;
     public override void Activate()
     {
         return;
@@ -16,7 +15,7 @@ public class FireRateUpRule : RuleFunction
 
     public override void WeaponActivate(Weapon weapon)
     {
-        fireRate = weapon.rateOfFirePerSecond;
+
         weapon.rateOfFirePerSecond *= 1.5f;
         GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
         AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.firerate_up, soundPoint.transform.position);
@@ -34,6 +33,6 @@ public class FireRateUpRule : RuleFunction
 
     public override void WeaponDeactivate(Weapon weapon)
     {
-        weapon.rateOfFirePerSecond = fireRate;
+        weapon.rateOfFirePerSecond = 3f;
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
@@ -58,7 +59,6 @@ public class BaseEnemy : MonoBehaviour, IHitable
             enemyVis.transform.localPosition = new Vector3(0, -0.45f + Random.Range(0.0000001f, 1f), 0);
             Destroy(GetComponent<Rigidbody>());
             Destroy(GetComponent<Collider>());
-            this.gameObject.SetActive(false);
         }
     }
 
@@ -73,6 +73,11 @@ public class BaseEnemy : MonoBehaviour, IHitable
 
     private async void Attack() 
     {
+        if(this == null) 
+        {
+            return;
+        }
+
         if (player == null) 
         {
             await Task.Delay(attackCheckInterval);

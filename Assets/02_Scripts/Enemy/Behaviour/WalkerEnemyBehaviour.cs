@@ -26,8 +26,16 @@ public class WalkerEnemyBehaviour : EnemyBehaviour
         agent.autoTraverseOffMeshLink = false;
         while (true)
         {
+            if (!agent.isActiveAndEnabled) 
+            {
+                break;
+            }
             agent.speed = enemy.speed;
-            agent.SetDestination(enemy.target.position);
+            if (agent.isOnNavMesh) 
+            {
+                agent.SetDestination(enemy.target.position);
+            
+            }
             if (agent.isOnOffMeshLink)
             {
                 yield return enemy.StartCoroutine(Parabola(agent, 2.0f, 0.5f));
