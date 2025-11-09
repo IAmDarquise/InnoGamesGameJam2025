@@ -14,11 +14,8 @@ public class UIController_HUD : MonoBehaviour
     private void Awake()
     {
         _root = _uiDoc.rootVisualElement;
-
-    }
-    private void Start()
-    {
         RegisterCallbacks();
+
     }
 
     private void RegisterCallbacks()

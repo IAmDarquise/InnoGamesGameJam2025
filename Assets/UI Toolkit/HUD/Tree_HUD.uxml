@@ -9,11 +9,11 @@
         <ui:VisualElement name="ScoreDisplay" style="flex-grow: 1; position: absolute; width: 300px; min-width: 300px; max-width: 300px; height: 200px; min-height: 200px; max-height: 200px; background-color: rgba(0, 255, 255, 0.4); border-left-color: rgb(177, 250, 255); border-right-color: rgb(177, 250, 255); border-top-color: rgb(177, 250, 255); border-bottom-color: rgb(177, 250, 255); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; top: 50%; translate: 0 -50%;">
             <ui:VisualElement name="VisualElement" class="scoreBox">
                 <ui:Label text="Score:" class="labelText" />
-                <ui:Label text="20000" name="ScoreAmount" class="labelAmount" />
+                <ui:Label text="0" name="ScoreAmount" class="labelAmount" />
             </ui:VisualElement>
             <ui:VisualElement class="scoreBox" style="flex-grow: 1; height: 100px; min-height: 100px; max-height: 100px; width: 300px; min-width: 300px; max-width: 300px;">
                 <ui:Label text="Wave:" class="labelText" />
-                <ui:Label text="5" name="WaveAmount" class="labelAmount" />
+                <ui:Label text="1" name="WaveAmount" class="labelAmount" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
