@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Transform muzzlePosition;
     [SerializeField] List<ParticleSystem> impactVFXs;
 
-    private float lastReload = float.MaxValue;
+    private float lastReload = float.MinValue;
     private int currentVFXID = 0;
     public float damage;
     public float rateOfFirePerSecond;
@@ -41,6 +41,7 @@ public class Weapon : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R) && Time.time - lastReload >=2)
         {
+            lastReload = Time.time;
             lastShot = Time.time+2;
             Reload();
         }
@@ -66,9 +67,9 @@ public class Weapon : MonoBehaviour
 
     public void Shoot() 
     {
-        Vector3 dir = Camera.main.ScreenToWorldPoint(new Vector3(x,y,100))-muzzlePosition.position;
+        Vector3 dir = Camera.main.ScreenToWorldPoint(new Vector3(x,y,100))- Camera.main.ScreenToWorldPoint(new Vector3(x, y, 1));
         Ray gunLine = new Ray(muzzlePosition.position, dir);
-        if(Physics.Raycast(gunLine, out RaycastHit hitinfo, 30, hitableLayer)) 
+        if (Physics.Raycast(Camera.main.ScreenToWorldPoint(new Vector3(x, y, 1)),dir.normalized, out RaycastHit hitinfo, 30, hitableLayer)) 
         {
 
             impactVFXs[currentVFXID].transform.position = hitinfo.point;
