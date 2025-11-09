@@ -1,7 +1,7 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/MainMenu/Style_MainMenu.uss?fileID=7433441132597879392&amp;guid=b9da8cbf55a93c340a3b0c9b8fb4b151&amp;type=3#Style_MainMenu" />
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenu/Style_MainMenuTitle.uss?fileID=7433441132597879392&amp;guid=9b50b913550b5eb4a8c9b01dc6487ee8&amp;type=3#Style_MainMenuTitle" />
     <ui:VisualElement name="Parent" style="width: 300px; min-width: 300px; max-width: 300px; height: 90px; min-height: 90px; max-height: 90px; justify-content: space-evenly;">
-        <ui:VisualElement name="Start" class="ButtonVisualElement">
+        <ui:VisualElement name="ksdjaihsdsjad" class="ButtonVisualElement">
             <ui:Label text="FUCK THE R*LEZ!" name="Label" class="ButtonLabel" />
         </ui:VisualElement>
     </ui:VisualElement>

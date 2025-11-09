@@ -59,6 +59,9 @@ public class UIController_PauseMenu : MonoBehaviour
 
     private void OnExitButtonClicked(ClickEvent eventArgs)
     {
+        UnityEngine.Cursor.visible = true;
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 
