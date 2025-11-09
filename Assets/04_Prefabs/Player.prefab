@@ -10057,7 +10057,7 @@ MonoBehaviour:
   hitmarker: {fileID: 3542639279521494290}
   _skanone: {fileID: 5222788691371528836}
   damage: 4
-  rateOfFirePerSecond: 1
+  rateOfFirePerSecond: 3
   maxAccuracyMalus: 0
   maxSohtTakenIntoConsiderationForAccuracy: 50
 --- !u!1 &2839438621930038196

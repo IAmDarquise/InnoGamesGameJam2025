@@ -21,6 +21,11 @@ public class FireRateUpRule : RuleFunction
         AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.firerate_up, soundPoint.transform.position);
     }
 
+    public override void EnemyActivate(BaseEnemy enemy)
+    {
+        return;
+    }
+
     public override void Deactivate()
     {
         return;
@@ -34,5 +39,10 @@ public class FireRateUpRule : RuleFunction
     public override void WeaponDeactivate(Weapon weapon)
     {
         weapon.rateOfFirePerSecond = 3f;
+    }
+
+    public override void EnemyDeactivate(BaseEnemy enemy)
+    {
+        return;
     }
 }

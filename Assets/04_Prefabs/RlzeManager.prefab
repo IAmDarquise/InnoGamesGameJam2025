@@ -56,5 +56,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 064af8813d2ab2944bc0572bac12f872, type: 2}
   - {fileID: 11400000, guid: 9bb7e63d8f3eb48478d678a108d6e217, type: 2}
   - {fileID: 11400000, guid: ae14cf3c89301154d894377ec9a912de, type: 2}
+  - {fileID: 11400000, guid: fc9e68cf61384a545b5373e458e07f4f, type: 2}
+  - {fileID: 11400000, guid: f498439e5b867064db1f7cd4e353548d, type: 2}
+  - {fileID: 11400000, guid: 08f0c447446ab8b4a8386c5210a2a618, type: 2}
+  - {fileID: 11400000, guid: 064af8813d2ab2944bc0572bac12f872, type: 2}
+  - {fileID: 11400000, guid: ae14cf3c89301154d894377ec9a912de, type: 2}
+  - {fileID: 11400000, guid: 9bb7e63d8f3eb48478d678a108d6e217, type: 2}
+  - {fileID: 11400000, guid: 763ae33cff5051540be8586a9f62c627, type: 2}
+  - {fileID: 11400000, guid: 50bf590d843727c46a20f8bfe4181a49, type: 2}
+  - {fileID: 11400000, guid: df1cd6df406eda74ab26bf3b750a7d49, type: 2}
+  - {fileID: 11400000, guid: a3dc8ca9351e09247bc1c7a1538d37ef, type: 2}
   ruleMachine1: {fileID: 0}
   ruleMachine2: {fileID: 0}

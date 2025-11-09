@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c2a2c0ee5ddeec4b9662b1aa862d1c3, type: 3}
   m_Name: SpeedUpRule
   m_EditorClassIdentifier: Assembly-CSharp::RuleInfo
-  ruleName: Speed Up
+  ruleName: Game Speed Up
   target: 2
   function:
     rid: 6775939608369168449

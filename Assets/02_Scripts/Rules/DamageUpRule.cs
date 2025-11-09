@@ -20,6 +20,11 @@ public class DamageUpRule : RuleFunction
         AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.damage_up, soundPoint.transform.position);
     }
 
+    public override void EnemyActivate(BaseEnemy enemy)
+    {
+        return;
+    }
+
     public override void Deactivate()
     {
         return;
@@ -33,5 +38,10 @@ public class DamageUpRule : RuleFunction
     public override void WeaponDeactivate(Weapon weapon)
     {
         weapon.damage = 4f;
+    }
+
+    public override void EnemyDeactivate(BaseEnemy enemy)
+    {
+        return;
     }
 }

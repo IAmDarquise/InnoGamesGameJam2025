@@ -20,6 +20,11 @@ public class DamageDownRule : RuleFunction
         weapon.damage *= 0.8f;
     }
 
+    public override void EnemyActivate(BaseEnemy enemy)
+    {
+        return;
+    }
+
     public override void Deactivate()
     {
         return;
@@ -33,5 +38,10 @@ public class DamageDownRule : RuleFunction
     public override void WeaponDeactivate(Weapon weapon)
     {
         weapon.damage = 4f;
+    }
+
+    public override void EnemyDeactivate(BaseEnemy enemy)
+    {
+        return;
     }
 }
