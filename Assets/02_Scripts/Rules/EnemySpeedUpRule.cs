@@ -21,6 +21,8 @@ public class EnemySpeedUpRule : RuleFunction
     public override void EnemyActivate(BaseEnemy enemy)
     {
         enemy.speed += 2f;
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.faste_enemies, soundPoint.transform.position);
     }
 
     public override void Deactivate()
