@@ -77,6 +77,9 @@ public class Weapon : MonoBehaviour
         Vector3 dir = Camera.main.ScreenToWorldPoint(new Vector3(x,y,100))- Camera.main.ScreenToWorldPoint(new Vector3(x, y, 1));
         Ray gunLine = new Ray(rayCastOrigin.position, dir);
         currentRay = gunLine;
+
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.laserpew, transform.position);
+
         if (Physics.Raycast(gunLine, out RaycastHit hitinfo, 30, hitableLayer)) 
         {
 
