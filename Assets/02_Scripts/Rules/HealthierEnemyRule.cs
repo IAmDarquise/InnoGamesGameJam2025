@@ -21,6 +21,8 @@ public class HealthierEnemyRule : RuleFunction
     public override void EnemyActivate(BaseEnemy enemy)
     {
         enemy.maxHp += 6f;
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.healthy_enemies, soundPoint.transform.position);
     }
 
     public override void Deactivate()

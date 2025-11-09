@@ -20,6 +20,11 @@ public class FMOD_EventList : MonoBehaviour
     [field: SerializeField] public EventReference moon_gravity { get; private set; }
     [field: SerializeField] public EventReference barSeb { get; private set; }
     [field: SerializeField] public EventReference laserpew { get; private set; }
+    [field: SerializeField] public EventReference double_spawn { get; private set; }
+    [field: SerializeField] public EventReference extra_jump { get; private set; }
+    [field: SerializeField] public EventReference faste_enemies { get; private set; }
+    [field: SerializeField] public EventReference healthy_enemies { get; private set; }
+    [field: SerializeField] public EventReference stronger_enemies { get; private set; }
 
 
     public static FMOD_EventList instance { get; private set; }

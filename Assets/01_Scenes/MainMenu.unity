@@ -7176,6 +7176,41 @@ MonoBehaviour:
       Data3: -2117957462
       Data4: 452352527
     Path: event:/SFX/LazerPew
+  <double_spawn>k__BackingField:
+    Guid:
+      Data1: 284476417
+      Data2: 1200046645
+      Data3: 1627383452
+      Data4: -1732379386
+    Path: event:/SFX/douple_spawns
+  <extra_jump>k__BackingField:
+    Guid:
+      Data1: -116491631
+      Data2: 1208540796
+      Data3: -536293248
+      Data4: 700463738
+    Path: event:/SFX/extra_jump
+  <faste_enemies>k__BackingField:
+    Guid:
+      Data1: -1354743109
+      Data2: 1237584007
+      Data3: 1699634596
+      Data4: 41285866
+    Path: event:/SFX/faster_enemies
+  <healthy_enemies>k__BackingField:
+    Guid:
+      Data1: 327830074
+      Data2: 1283642296
+      Data3: -1867794530
+      Data4: 1271895525
+    Path: event:/SFX/Healthy_or_stealthy
+  <stronger_enemies>k__BackingField:
+    Guid:
+      Data1: -20837710
+      Data2: 1324495591
+      Data3: 1093844925
+      Data4: -1436776646
+    Path: event:/SFX/stronger_enemies
 --- !u!43 &467358429
 Mesh:
   m_ObjectHideFlags: 0

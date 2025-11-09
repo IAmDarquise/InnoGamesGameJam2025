@@ -11,6 +11,8 @@ public class PlusOneJumpRule : RuleFunction
     public override void PlayerActivate(PlayerMovement player)
     {
         player.extraJumps++;
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.extra_jump, soundPoint.transform.position);
     }
 
     public override void WeaponActivate(Weapon weapon)
