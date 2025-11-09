@@ -1,0 +1,13 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/PauseMenu/Style_PauseMenu.uss?fileID=7433441132597879392&amp;guid=e8d03aecfceb98440aa98ff05d94d6c7&amp;type=3#Style_PauseMenu" />
+    <ui:VisualElement name="Parent" style="align-self: center; flex-direction: row; top: 40%;">
+        <ui:VisualElement name="Container" style="width: 400px; height: 300px; min-height: 300px; max-height: 300px; min-width: 400px; max-width: 400px; justify-content: space-evenly; align-self: center;">
+            <ui:VisualElement name="ResumeButton" class="button">
+                <ui:Label text="Resume SImulation" name="Label" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ExitSimulation" class="button" style="flex-grow: 1;">
+                <ui:Label text="Exit SImulation" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
