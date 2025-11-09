@@ -22,7 +22,7 @@ public class WaveSystem : MonoBehaviour
     public float strengthMultiplierPerWave = 1f;
     private int deadEnemies;
     private int enemyCount;
-
+    public int healAmountonWaveFinish = 5;
     private int ableToSpawn;
     private uint score;
     public uint Score { get { return score; } }
@@ -46,6 +46,7 @@ public class WaveSystem : MonoBehaviour
 
     private void InitNewWave() 
     {
+        player.Heal(healAmountonWaveFinish);
         currentWave++;
         _hud.DisplayWave(currentWave);
         spawnedEnemies = 0;
