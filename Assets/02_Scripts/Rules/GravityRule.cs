@@ -20,6 +20,11 @@ public class GravityRule : RuleFunction
         return;
     }
 
+    public override void EnemyActivate(BaseEnemy enemy)
+    {
+        return;
+    }
+
     public override void Deactivate()
     {
         Physics.gravity = new Vector3(0, -9.81f, 0);
@@ -32,6 +37,11 @@ public class GravityRule : RuleFunction
     }
 
     public override void WeaponDeactivate(Weapon weapon)
+    {
+        return;
+    }
+
+    public override void EnemyDeactivate(BaseEnemy enemy)
     {
         return;
     }

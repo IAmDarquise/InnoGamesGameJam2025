@@ -20,6 +20,11 @@ public class MoveSpeedDownRule : RuleFunction
         return;
     }
 
+    public override void EnemyActivate(BaseEnemy enemy)
+    {
+        return;
+    }
+
     public override void Deactivate()
     {
         return;
@@ -31,6 +36,11 @@ public class MoveSpeedDownRule : RuleFunction
     }
 
     public override void WeaponDeactivate(Weapon weapon)
+    {
+        return;
+    }
+
+    public override void EnemyDeactivate(BaseEnemy enemy)
     {
         return;
     }
