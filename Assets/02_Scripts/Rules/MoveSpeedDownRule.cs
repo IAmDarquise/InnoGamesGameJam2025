@@ -3,7 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public class MoveSpeedDownRule : RuleFunction
 {
-    float speed;
     public override void Activate()
     {
         return;
@@ -11,7 +10,6 @@ public class MoveSpeedDownRule : RuleFunction
 
     public override void PlayerActivate(PlayerMovement player)
     {
-        speed = player.moveSpeed;
         player.moveSpeed *= 0.8f;
     }
 
@@ -27,7 +25,7 @@ public class MoveSpeedDownRule : RuleFunction
 
     public override void PlayerDeactivate(PlayerMovement player)
     {
-        player.moveSpeed = speed;
+        player.moveSpeed = 10f;
     }
 
     public override void WeaponDeactivate(Weapon weapon)

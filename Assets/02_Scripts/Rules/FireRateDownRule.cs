@@ -3,7 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public class FireRateDownRule : RuleFunction
 {
-    float fireRate;
     public override void Activate()
     {
         return;
@@ -16,8 +15,7 @@ public class FireRateDownRule : RuleFunction
 
     public override void WeaponActivate(Weapon weapon)
     {
-        fireRate = weapon.rateOfFirePerSecond;
-        weapon.rateOfFirePerSecond *= 0.7f;
+        weapon.rateOfFirePerSecond *= 0.8f;
     }
 
     public override void Deactivate()
@@ -32,6 +30,6 @@ public class FireRateDownRule : RuleFunction
 
     public override void WeaponDeactivate(Weapon weapon)
     {
-        weapon.rateOfFirePerSecond = fireRate;
+        weapon.rateOfFirePerSecond = 3f;
     }
 }

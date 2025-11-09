@@ -3,7 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public class DamageUpRule : RuleFunction
 {
-    float damage;
     public override void Activate()
     {
         return;
@@ -16,7 +15,6 @@ public class DamageUpRule : RuleFunction
 
     public override void WeaponActivate(Weapon weapon)
     {
-        damage = weapon.damage;
         weapon.damage *= 2f;
     }
 
@@ -32,6 +30,6 @@ public class DamageUpRule : RuleFunction
 
     public override void WeaponDeactivate(Weapon weapon)
     {
-        weapon.damage = damage;
+        weapon.damage = 4f;
     }
 }

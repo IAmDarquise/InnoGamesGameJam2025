@@ -25,7 +25,7 @@ public class PlusOneJumpRule : RuleFunction
 
     public override void PlayerDeactivate(PlayerMovement player)
     {
-        player.extraJumps--;
+        player.extraJumps = 1;
     }
 
     public override void WeaponDeactivate(Weapon weapon)

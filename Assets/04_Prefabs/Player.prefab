@@ -5150,7 +5150,7 @@ MonoBehaviour:
   - {fileID: 598642553065928916}
   - {fileID: 145011338354794994}
   _skanone: {fileID: 5222788691371528836}
-  damage: 1
+  damage: 4
   rateOfFirePerSecond: 3
   maxAccuracyMalus: 0
   maxSohtTakenIntoConsiderationForAccuracy: 50
