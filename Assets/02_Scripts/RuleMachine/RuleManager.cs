@@ -65,10 +65,16 @@ public class RuleManager : MonoBehaviour
         {
             rule.UseWeapon(playerWeapon);
         }
+        else if (rule._ruleInfo.target == RuleInfo.RuleTarget.Enemy)
+        {
+            WaveSystem.Instance.enemyRules.Add(rule);
+        }
     }
 
     private void ResetRules()
     {
+        WaveSystem.Instance.enemyRules.Clear();
+
         if (selectedRule1 != null)
         {
             if (selectedRule1._ruleInfo.target == RuleInfo.RuleTarget.Global)
