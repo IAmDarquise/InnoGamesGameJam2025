@@ -18,6 +18,7 @@ public class FMOD_EventList : MonoBehaviour
     [field: SerializeField] public EventReference firerate_down { get; private set; }
     [field: SerializeField] public EventReference firerate_up { get; private set; }
     [field: SerializeField] public EventReference moon_gravity { get; private set; }
+    [field: SerializeField] public EventReference barSeb { get; private set; }
 
 
     public static FMOD_EventList instance { get; private set; }
