@@ -80,7 +80,7 @@ public class Weapon : MonoBehaviour
 
         AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.laserpew, transform.position);
 
-        if (Physics.Raycast(gunLine, out RaycastHit hitinfo, 30, hitableLayer)) 
+        if (Physics.Raycast(gunLine, out RaycastHit hitinfo, 100, hitableLayer)) 
         {
 
             impactVFXs[currentVFXID].transform.position = hitinfo.point;
