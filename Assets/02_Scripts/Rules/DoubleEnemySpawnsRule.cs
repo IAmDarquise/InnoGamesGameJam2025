@@ -6,6 +6,8 @@ public class DoubleEnemySpawnsRule : RuleFunction
     public override void Activate()
     {
         WaveSystem.Instance.strengthMultiplierPerWave *= 2;
+        GameObject soundPoint = GameObject.FindGameObjectWithTag("SoundPoint");
+        AudioManager.instance.Play3DOneShot(FMOD_EventList.instance.double_spawn, soundPoint.transform.position);
     }
 
     public override void PlayerActivate(PlayerMovement player)

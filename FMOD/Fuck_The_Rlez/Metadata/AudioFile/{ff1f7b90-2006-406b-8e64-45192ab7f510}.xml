@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{b1c37270-1ec9-464b-a0b1-48ed1a2755a3}">
+	<object class="AudioFile" id="{ff1f7b90-2006-406b-8e64-45192ab7f510}">
 		<property name="assetPath">
-			<value>Faster Enemies.mp3</value>
+			<value>faster_enemies.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
